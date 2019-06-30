@@ -54,5 +54,4 @@ production:
   #password: <%= ENV['FREEMARKET_SAMPLE_0622A_DATABASE_PASSWORD'] %>
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
- # socket: に続く部分を先ほど調べたパスに置き換える 
   socket: /var/lib/mysql/mysql.sock

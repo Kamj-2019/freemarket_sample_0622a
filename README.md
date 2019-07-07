@@ -21,7 +21,6 @@ Basic information for user (ex. nickname, password, e-mail)
 | id            |               |            |
 | nickname      | string       | null:false  |
 | email         | string       | null:false  |
-| user_image_id  | references  | null:false, foreign_key: true  |
 | user_detail_id | references  | null:false, foreign_key: true  |
 | created_at    | datetime     | null:false  |
 | update_at     | datetime     | null:false  |
@@ -56,6 +55,7 @@ Detail informations for user (ex. name, birthday, addresses etc)
 
 
 ### Association
+- belongs_to :user
 - belongs_to :prefecture
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy 
@@ -75,17 +75,6 @@ Prefectures and overseas users live.
 - belongs_to :user_detail
 - belongs_to :item
 
->## Table: '*User_images*'
-One image for one user
-
-| Column     | Type        | Options   |
-| -----------|:-----------:| ----------|
-| id         |             |           |
-| image_url  | string      |           |
-| user_id    | reference   | null:false, foreign_key: true |
-
-### Association
-- belongs_to :item
 
 >## Table: '*Evaluations*'
 Evaluation for each user by other users (ex. Excellent, Good, Bad)

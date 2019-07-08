@@ -96,7 +96,8 @@ saving user_id and evaluations_id for one record.
 | user_id       | reference     | null:false |
 
 ### Association
-- has_many :users
+- belongs_to :user
+- belongs_to :evaluation
 
 ># Table: '*User_items*' (intermediate)
 | Column        | Type          | Options   |
@@ -107,6 +108,11 @@ saving user_id and evaluations_id for one record.
 | payjp_id      | reference     | null:false, foreign_key: true |
 
 * Payjp column would be changed when setting Payjap function. 
+
+### Association
+- belongs_to :user
+- belongs_to :item
+- belongs_to :payjp
 
 
 ># Table: '*Items*'

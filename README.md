@@ -28,7 +28,6 @@ Basic information for user (ex. nickname, password, e-mail)
 
 ### Association
 - has_one :user_detail, optional: true, dependent: :delete
-- belongs_to :prefecture
 - has_many :items, dependent: :destroy
 - has_many :evaluations,through: :user_evaluations, dependent: :destroy
 - has_many :likes, through: items, dependent: :destroy

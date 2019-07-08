@@ -21,7 +21,6 @@ Basic information for user (ex. nickname, password, e-mail)
 | id            |               |            |
 | nickname      | string       | null:false  |
 | email         | string       | null:false  |
-| user_detail_id | references  | null:false, foreign_key: true  |
 | created_at    | datetime     | null:false  |
 | update_at     | datetime     | null:false  |
 
@@ -52,6 +51,7 @@ Detail informations for user (ex. name, birthday, addresses etc)
 | address          | string    | null:false |
 | building         | string    |            |
 | phone_number     | integer   | null:false |
+| user_id          | reference  | null:false, foreign_key: true |
 
 
 ### Association

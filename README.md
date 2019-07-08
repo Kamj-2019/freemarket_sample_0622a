@@ -40,7 +40,7 @@ Detail informations for user (ex. name, birthday, addresses etc)
 | Column           | Type      | Options    |
 | -----------------|:---------:| -----------|
 | id               |           |            |
-| first_nam        | string    | null:false |
+| first_name       | string    | null:false |
 | family_name      | string    | null:false |
 | kana_first_name  | string    | null:false |
 | kana_family_name | string    | null:false |
@@ -51,7 +51,7 @@ Detail informations for user (ex. name, birthday, addresses etc)
 | address          | string    | null:false |
 | building         | string    |            |
 | phone_number     | integer   | null:false |
-| user_id          | reference  | null:false, foreign_key: true |
+| user_id          | reference | null:false, foreign_key: true |
 
 
 ### Association

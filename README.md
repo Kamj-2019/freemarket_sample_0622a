@@ -69,7 +69,7 @@ Prefectures and overseas users live.
 | item_id        |  reference | null:false, foreign_key: true |
 
 ### Association
-- belongs_to :user_detail
+- has_many :user_details
 - belongs_to :item
 
 

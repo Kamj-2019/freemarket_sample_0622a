@@ -140,9 +140,9 @@ Selling items
 - belongs_to :user
 - belongs_to :prefecture
 - belongs_to :brand
-- belongs_to :category
 - belongs_to :size
 - belongs_to :status
+- has_many :categories
 
 
 >## Table: '*Item_images*'
@@ -188,60 +188,12 @@ credit cards for purchase items.
 | Column        | Type          | Options   |
 | ------------- |:-------------:| ----------|
 | id            |               |           |
-| first_category_id  | reference  | null:false, foreign_key: true  |
-| second_category_id | reference  | null:false, foreign_key: true  |
-| third_category_id  | reference  | null:false, foreign_key: true  |
+| first_category_id  | reference  | null:false, foreign_key: true, active-hash  |
+| second_category_id | reference  | null:false, foreign_key: true, active-hash  |
+| third_category_id  | reference  | null:false, foreign_key: true, active-hash  |
 
 ### Association
-- belongs_to :first_category
-- belongs_to :second_category
-- belongs_to :third_category
-
->## Table: '*First_categories*'
-First categories for items (ex.ladies, cars, tickets, books, etc.)
-
-| Column        | Type          | Options   |
-| ------------- |:-------------:| ----------|
-| id            |               |           |
-| name          | integer       | null:false, active-hash|
-| second_category_id | reference  | null:false, foreign_key: true  |
-| third_category_id  | reference  | null:false, foreign_key: true  |
-
-### Association
-- has_many :items
-- has_many :second_categories, through: :categories
-- has_many :third_categories, through: :categories
-
-
->## Table: '*Second_categories*'
-Second categories for items(ex.tops, automobile parts, movie ticket, manga, etc.)
-
-| Column        | Type          | Options   |
-| ------------- |:-------------:| ----------|
-| id            |               |           |
-| name          | integer       | null:false, active-hash  |
-| first_category_id  | reference   | null:false, foreign_key: true  |
-| third_category_id  | reference   | null:false, foreign_key: true  |
-
-### Association
-- has_many :items
-- has_many :first_categories, through: :categories
-- has_many :third_categories, through: :categories
-
->## Table: '*Third_categories*'
-Third categories for items(ex.t-shirt, light, Japanese movie, girl's comic, etc.)
-
-| Column        | Type          | Options   |
-| ------------- |:-------------:| ----------|
-| id            |               |           |
-| name          | integer       | null:false, active-hash  |
-| second_category_id  | reference   | null:false, foreign_key: true |
-| third_category_id   | reference   | null:false, foreign_key: true |
-
-### Association
-- has_many :items
-- has_many :first_categories, through: :categories
-- has_many :second_categories, through: :categories
+- belongs_to :item
 
 >## Table: '*Brands*'
 Brands for items (Incremental search is prefer)
@@ -301,7 +253,6 @@ Shipping Days before delivery (ex.1-2, 2-3, 3-4 days)
 
 ### Association
 - has_many :items
-
 
 >## Table:'Delivery_fee_payers'
 Payer for delivery fee (seller or buyer)

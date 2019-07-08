@@ -30,12 +30,12 @@ Basic information for user (ex. nickname, password, e-mail)
 - has_one :user_detail, optional: true, dependent: :delete
 - belongs_to :prefecture
 - has_many :items, dependent: :destroy
-- has_many :evaluations, dependent: :destroy
+- has_many :evaluations,through: :user_evaluations, dependent: :destroy
 - has_many :likes, through: items, dependent: :destroy
 - has_many :cards, dependent: destroy
 
 >## Table: '*User_details*'
-Detail informations for user (ex. name, birthday, addresses etc)
+Detail information for user (ex. name, birthday, addresses etc)
 
 | Column           | Type      | Options    |
 | -----------------|:---------:| -----------|
@@ -57,9 +57,7 @@ Detail informations for user (ex. name, birthday, addresses etc)
 ### Association
 - belongs_to :user
 - belongs_to :prefecture
-- has_many :items, dependent: :destroy
-- has_many :likes, dependent: :destroy 
-- has_many :evaluations, through: :user_evaluations,  dependent: :destroy
+
 
 >## Table: '*Prefectures*'
 Prefectures and overseas users live.

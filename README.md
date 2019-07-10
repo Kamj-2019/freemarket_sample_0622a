@@ -123,7 +123,7 @@ Selling items
 | category_id | reference   | null:false, foreign_key: true |
 | size_id     | reference   | null:false, foreign_key: true |
 | brand_id    | reference   | null:false, foreign_key: true |
-| status_id   | reference   | null:false |
+| status_id   | reference   | null:false, foreign_key: true |
 | delivery_fee_payer_id | reference | null:false, foreign_key: true |
 | delivery_method_id    | reference | null:false, foreign_key: true |
 | prefecture_id         | reference | null:false, foreign_key: true |
@@ -141,7 +141,7 @@ Selling items
 - belongs_to :category
 - belongs_to_active_hash :size
 - belongs_to_active_hash :status
-- belongs_to :brand
+- belongs_to_active_hash :brand
 - belongs_to_active_hash :delivery_fee_payer
 - belongs_to_active_hash :delivery_method
 - belongs_to_active_hash :prefecture

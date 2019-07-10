@@ -183,10 +183,8 @@ Images for selling items (up to 10)
 | third_category_id  | reference  | null:false, foreign_key: true, active-hash  |
 
 ### Association
-- belongs_to :item
-- belong_to_active_hash :first_category
-- belong_to_active_hash :second_category
-- belong_to_active_hash :third_category
+- has_many :items
+- has_many :sizes, through:sizes_categories
 
 >## Table: '*Brands*'
 Brands for items (Incremental search is prefer)
@@ -223,7 +221,7 @@ Sizes for some items (not all) in third categories
 
 ### Association
 - has_many :items, 
-- belongs_to_active_hash :category, through sizes_category
+- belongs_to_active_hash :category, through sizes_categories
 
 
 >## Table: 'Status'

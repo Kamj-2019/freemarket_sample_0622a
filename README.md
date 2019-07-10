@@ -28,10 +28,8 @@ Basic information for user (ex. nickname, password, e-mail)
 
 ### Association
 - has_one :user_detail, optional: true, dependent: :delete
-- has_many :items, dependent: :destroy
-- has_many :evaluations,through: :user_evaluations, dependent: :destroy
-- has_many :likes, through: items, dependent: :destroy
-- has_many :cards, dependent: destroy
+- has_many :items, through likes, through: users_items, dependent: :destroy
+- has_many_active_hash :evaluations, through: :users_evaluations, dependent: :destroy
 
 >## Table: '*User_details*'
 Detail information for user (ex. name, birthday, addresses etc)
@@ -55,7 +53,7 @@ Detail information for user (ex. name, birthday, addresses etc)
 
 ### Association
 - belongs_to :user
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 
 
 >## Table: '*Prefectures*'
@@ -64,9 +62,8 @@ Prefectures and overseas users live.
 | Column         | Type       | Options   |
 | -------------- |:----------:| ----------|
 | id             |            |           |
-| name           | text       | null:false, active-hash       |
-| user_detail_id | reference  | null:false, foreign_key: true |
-| item_id        |  reference | null:false, foreign_key: true |
+| prefecture     | text       | null:false, active-hash |
+
 
 ### Association
 - has_many :user_details
@@ -79,11 +76,10 @@ Evaluation for each user by other users (ex. Excellent, Good, Bad)
 | Column       | Type       | Options   |
 | -------------|:----------:| ----------|
 | id           |            |           |
-| evaluation   | integer    | null:false, active-hash       |
-| user_id      | reference  | null:false, foreign_key: true |
+| evaluation   | integer    | null:false, active-hash |
 
 ### Association
-- has_many :users, through :user_evaluations
+- has_many :users, through :users_evaluations
 
 
 >## Table:'*Users_evaluations*'(Intermediate)
@@ -92,14 +88,14 @@ saving user_id and evaluations_id for one record.
 | Column        | Type          | Options    |
 | ------------- |:-------------:| -----------|
 | id            |               |            |
-| evaluation_id | reference     | null:false |
-| user_id       | reference     | null:false |
+| evaluation_id | reference     | null:false, foreign_key:true   |
+| user_id       | reference     | null:false, foreign_key: true    |
 
 ### Association
 - belongs_to :user
-- belongs_to :evaluation
+- belongs_to_active_hash :evaluation
 
-># Table: '*User_items*' (intermediate)
+>## Table: '*Users_items*' (intermediate)
 | Column        | Type          | Options   |
 | ------------- |:-------------:| ----------|
 | id            |               |           |
@@ -107,7 +103,7 @@ saving user_id and evaluations_id for one record.
 | item_id       | reference     | null:false, foreign_key: true |
 | payjp_id      | reference     | null:false, foreign_key: true |
 
-* Payjp column would be changed when setting Payjap function. 
+* Payjp column would be changed when setting Payjp function. 
 
 ### Association
 - belongs_to :user
@@ -115,40 +111,41 @@ saving user_id and evaluations_id for one record.
 - belongs_to :payjp
 
 
-># Table: '*Items*'
+>## Table: '*Items*'
 Selling items
 
 | Column        | Type          | Options   |
 | ------------- |:-------------:| ----------|
 | id            |               |           |
 | image_id      | reference | null:false |
-| product_title | text      | null:false |
-| description | text        | null:false |
+| item_title    | text      | null:false |
+| description   | text      | null:false |
 | category_id | reference   | null:false, foreign_key: true |
 | size_id     | reference   | null:false, foreign_key: true |
-| brand_name  | text        | null:false, foreign_key: true |
+| brand_id    | reference   | null:false, foreign_key: true |
 | status_id   | reference   | null:false |
 | delivery_fee_payer_id | reference | null:false, foreign_key: true |
 | delivery_method_id    | reference | null:false, foreign_key: true |
 | prefecture_id         | reference | null:false, foreign_key: true |
 | shipping_day_id       | reference | null:false, foreign_key: true |
 | price       | integer     | null:false |
-| user_id     | reference   | null:false |
+| user_id     | reference   | null:false, foreign_key: true  |
 | create_at   | daytime     | null:false |
 | update_at   | daytime     | null:false |
 
 ### Association
-- has_many :likes 
 - has_many :item_images
-- belongs_to :delivery_fee_payer 
-- belongs_to :shippings_day
 - belongs_to :user
-- belongs_to :prefecture
+- has_many :users, through: :users_items
+- has_many :users, through: :likes
+- belongs_to :categories
+- belongs_to_active_hash :size
+- belongs_to_active_hash :status
 - belongs_to :brand
-- belongs_to :size
-- belongs_to :status
-- has_many :categories
-
+- belongs_to_active_hash :delivery_fee_payer
+- belongs_to_active_hash :delivery_method
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :shipping_day
 
 >## Table: '*Item_images*'
 Images for selling items (up to 10)
@@ -163,13 +160,12 @@ Images for selling items (up to 10)
 - belongs_to :item
 
 
->## Table: '*Likes*'
+>## Table: '*Likes*' (Intermediate)
 'likes' mark to item and user can keep the items on "favourite" screen.
 
 | Column    | Type       | Options   |
 | --------- |:----------:| ----------|
 | id        |            |           |
-| like      | boolean    |           |
 | item_id   | reference  | null:false, foreign_key: true |
 | user_id   | reference  | null:false, foreign_key: true |
 
@@ -177,17 +173,6 @@ Images for selling items (up to 10)
 - belongs_to :item 
 - belongs_to :user
 
->## Table: '*Cards*'
-credit cards for purchase items.
-
-| Column      | Type        | Options   |
-| ----------- |:-----------:| ----------|
-| id          |             |           |
-| card_number | integer     | null:false  |
-| user_id     | reference   | null:false, foreign_key: true  |
-
-### Association
-- belongs_to :user
 
 >## Table: '*Categories*' (Intermediate)
 | Column        | Type          | Options   |
@@ -199,6 +184,9 @@ credit cards for purchase items.
 
 ### Association
 - belongs_to :item
+- belong_to_active_hash :first_category
+- belong_to_active_hash :second_category
+- belong_to_active_hash :third_category
 
 >## Table: '*Brands*'
 Brands for items (Incremental search is prefer)
@@ -206,22 +194,23 @@ Brands for items (Incremental search is prefer)
 | Column  | Type       | Options     |
 | ------- |:----------:| ------------|
 | id      |            |             |
-| name    | string     | null:false  |
+| brand   | string     | null:false  |
 
 ### Association
 - has_many :items
 
->## Table: '*Size_third_categories*'  (Intermediate)
+>## Table: '*Sizes_categories*'  (Intermediate)
 
 | Column        | Type          | Options   |
 | ------------- |:-------------:| ----------|
 | id            |               |           |
-| size_id           | string    | null:false, foreign_key: true  |
-| third_category_id | reference | null:false, foreign_key: true  |
+| size_id     | reference | null:false, foreign_key: true, active_hash |
+| category_id | reference | null:false, foreign_key: true, active_hash |
 
 ### Association
-- belongs_to :size
-- belongs_to :third_category
+- belongs_to_active_hash :size
+- belongs_to_active_hash :category
+
 
 
 >## Table: 'Sizes'
@@ -233,7 +222,8 @@ Sizes for some items (not all) in third categories
 | size      | string    | null:false, active-hash |
 
 ### Association
-- has_many :items
+- has_many :items, 
+- belongs_to_active_hash :category, through sizes_category
 
 
 >## Table: 'Status'
@@ -254,7 +244,7 @@ Shipping Days before delivery (ex.1-2, 2-3, 3-4 days)
 | Column   | Type       | Options   |
 | ---------|:----------:| ----------|
 | id       |            |           |
-| day      | string     | null:false, active-hash |
+| Shipping_days | string     | null:false, active-hash |
 
 ### Association
 - has_many :items
@@ -278,4 +268,3 @@ Rails 5.0.7.2
 
 ## Gem
 Devise, Active hash, kaminari, Aasm, OmniAuth - Rails CSRF,
-

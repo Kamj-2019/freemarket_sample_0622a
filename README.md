@@ -89,7 +89,7 @@ saving user_id and evaluations_id for one record.
 | ------------- |:-------------:| -----------|
 | id            |               |            |
 | evaluation_id | reference     | null:false, foreign_key:true   |
-| user_id       | reference     | null:false, foreign_key: true    |
+| user_id       | reference     | null:false, foreign_key: true  |
 
 ### Association
 - belongs_to :user
@@ -138,7 +138,7 @@ Selling items
 - belongs_to :user
 - has_many :users, through: :users_items
 - has_many :users, through: :likes
-- belongs_to :categories
+- belongs_to :category
 - belongs_to_active_hash :size
 - belongs_to_active_hash :status
 - belongs_to :brand

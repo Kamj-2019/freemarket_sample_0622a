@@ -42,12 +42,12 @@ Detail information for user (ex. name, birthday, addresses etc)
 | kana_first_name  | string    | null:false |
 | kana_family_name | string    | null:false |
 | birthday         | integer   | null:false |
-| postalcode       | integer   | null:false |
+| postalcode       | string    | null:false |
 | prefecture_id    | reference | null:false, foreign_key: true |
 | city             | string    | null:false |
 | address          | string    | null:false |
 | building         | string    |            |
-| phone_number     | integer   | null:false |
+| phone_number     | string    | null:false |
 | user_id          | reference | null:false, foreign_key: true |
 
 
@@ -62,7 +62,7 @@ Prefectures and overseas users live.
 | Column         | Type       | Options   |
 | -------------- |:----------:| ----------|
 | id             |            |           |
-| prefecture     | text       | null:false, active-hash |
+| prefecture     | string     | null:false, active-hash |
 
 
 ### Association
@@ -117,7 +117,6 @@ Selling items
 | Column        | Type          | Options   |
 | ------------- |:-------------:| ----------|
 | id            |               |           |
-| image_id      | reference | null:false |
 | item_title    | text      | null:false |
 | description   | text      | null:false |
 | category_id | reference   | null:false, foreign_key: true |

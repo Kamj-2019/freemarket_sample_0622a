@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ /*
+ *= require font-awesome
+ */
+
+@import "modules/variable";
+@import "modules/base";
+@import "modules/header";
+@import "modules/sidebar";
+@import "modules/footer";
+@import "homes";
+@import "mypage";
+@import "config/reset";
+@import "font-awesome";
+

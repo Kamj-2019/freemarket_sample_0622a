@@ -1,0 +1,842 @@
+%header
+  .top__search
+    %a.top__search__logo{:href => ""}
+      %img{:src => "/assets/logo.png", :width => "135"}/
+    %form{"accept-charset" => "UTF-8", :action => "", :enctype => "multipart/form-data", :id => "", :method => "post"}
+      %input{:placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+      %button{:type => "submit"}
+        %i.fa.fa-search{"aria-hidden" => "true"}
+  %nav
+    .top__navi
+      %ul.top__navi--left
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-list-ul{"aria-hidden" => "true"}>
+            カテゴリーから探す
+          %ul.top__navi--left--first
+            %li
+              %a{:href => "#"} レディース
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"} トップス
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} Tシャツ/カットソー（半袖/袖なし）
+                    %li
+                      %a{:href => ""} Tシャツ/カットソー（七分/長袖）
+                    %li
+                      %a{:href => ""} シャツ/ブラウス（半袖/袖なし）
+                    %li
+                      %a{:href => ""} シャツ/ブラウス（七分/長袖）
+                %li
+                  %a{:href => "#"} ジャケット/アウター
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} テーラードジャケット
+                    %li
+                      %a{:href => ""} ノーカラージャケット
+                    %li
+                      %a{:href => ""} Gジャン/デニムジャケット
+                %li
+                  %a{:href => "#"} パンツ
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} デニム/ジーンズ
+                    %li
+                      %a{:href => ""} ショートパンツ
+                    %li
+                      %a{:href => ""} カジュアルパンツ
+                %li
+                  %a{:href => "#"} スカート
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} ミニスカート
+                    %li
+                      %a{:href => ""} ひざ丈スカート
+                    %li
+                      %a{:href => ""} ロングスカート
+                %li
+                  %a{:href => "#"} ワンピース
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} ミニワンピース
+                    %li
+                      %a{:href => ""} ひざ丈ワンピース
+                    %li
+                      %a{:href => ""} ロングワンピース
+            %li
+              %a{:href => "#"} メンズ
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"} トップス
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} Tシャツ/カットソー（半袖/袖なし）
+                    %li
+                      %a{:href => ""} Tシャツ/カットソー（七分/長袖）
+                    %li
+                      %a{:href => ""} シャツ
+                %li
+                  %a{:href => "#"} ジャケット/アウター
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} テーラードジャケット
+                    %li
+                      %a{:href => ""} ノーカラージャケット
+                    %li
+                      %a{:href => ""} Gジャン/デニムジャケット
+                %li
+                  %a{:href => "#"} パンツ
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} デニム/ジーンズ
+                    %li
+                      %a{:href => ""} ワークパンツ/カーゴパンツ
+                    %li
+                      %a{:href => ""} スラックス
+                %li
+                  %a{:href => "#"} 靴
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} スニーカー
+                    %li
+                      %a{:href => ""} サンダル
+                    %li
+                      %a{:href => ""} ブーツ
+                %li
+                  %a{:href => "#"} バッグ
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} ショルダーバッグ
+                    %li
+                      %a{:href => ""} トートバッグ
+                    %li
+                      %a{:href => ""} ボストンバッグ
+                %li
+                  %a{:href => "#"} スーツ
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} スーツジャケット
+                    %li
+                      %a{:href => ""} スーツベスト
+                    %li
+                      %a{:href => ""} スラックス
+            %li
+              %a{:href => "#"} ベビー・キッズ
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"} ベビー服（女の子用）〜95cm
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} トップス
+                    %li
+                      %a{:href => ""} アウター
+                    %li
+                      %a{:href => ""} パンツ
+                    %li
+                      %a{:href => ""} スカート
+                %li
+                  %a{:href => "#"} ベビー服（男の子用）〜95cm
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} トップス
+                    %li
+                      %a{:href => ""} アウター
+                    %li
+                      %a{:href => ""} パンツ
+                    %li
+                      %a{:href => ""} おくるみ
+                %li
+                  %a{:href => "#"} ベビー服（男女兼用）〜95cm
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} トップス
+                    %li
+                      %a{:href => ""} アウター
+                    %li
+                      %a{:href => ""} パンツ
+                    %li
+                      %a{:href => ""} おくるみ
+                %li
+                  %a{:href => "#"} キッズ服（女の子用）100cm〜
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} コート
+                    %li
+                      %a{:href => ""} ジャケット/上着
+                    %li
+                      %a{:href => ""} トップス（Tシャツ/カットソー）
+                %li
+                  %a{:href => "#"} キッズ服（男の子用）100cm〜
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} コート
+                    %li
+                      %a{:href => ""} ジャケット/上着
+                    %li
+                      %a{:href => ""} トップス（Tシャツ/カットソー）
+                %li
+                  %a{:href => "#"} キッズ服（男女兼用）100cm〜
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""} コート
+                    %li
+                      %a{:href => ""} ジャケット/上着
+                    %li
+                      %a{:href => ""} トップス（Tシャツ/カットソー）
+            %li
+              %a{:href => "#"} インテリア・住まい・小物
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} 本・音楽・ゲーム
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} おもちゃ・ホビー・グッズ
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} コスメ・香水・美容
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} 家電・スマホ・カメラ
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} スポーツ・レジャー
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} ハンドメイド
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} チケット
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} 自動車・オートバイ
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} その他
+              %ul.top__navi--left--second
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                %li
+                  %a{:href => "#"}
+                  %ul.top__navi--left--third
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+                    %li
+                      %a{:href => ""}
+            %li
+              %a{:href => "#"} カテゴリー一覧
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-tag.fa-rotate-315{"aria-hidden" => "true"}>
+            ブランドから探す
+          %ul.top__navi--left--first
+            %li
+              %a{:href => "#"} シャネル
+            %li
+              %a{:href => "#"} ナイキ
+            %li
+              %a{:href => "#"} ルイヴィトン
+            %li
+              %a{:href => "#"} シュプリーム
+            %li
+              %a{:href => "#"} アディダス
+            %li
+              %a{:href => "#"} ブランド一覧
+      %ul.top__navi--right
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-heart-o{"aria-hidden" => "true"}>
+            いいね！一覧
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-bell-o{"aria-hidden" => "true"}>
+            お知らせ
+          %ul.top__navi--right-info
+            %li
+              %a{:href => "#"} d1
+            %li
+              %a{:href => "#"} d1
+            %li
+              %a{:href => "#"} d1
+            %li
+              %a{:href => "#"} d1
+            %li
+              %a{:href => "#"} d1
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-check{"aria-hidden" => "true"}>
+            やることリスト
+          %ul.top__navi--right-todo
+            %li
+              %a{:href => "#"} 現在、やることリストはありません。
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-user-circle-o{"aria-hidden" => "true"}>
+            マイページ
+          %ul.top__navi--right-mypage
+            %div
+              %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
+              %p ニックネーム
+              %p 評価：0　出品数：1
+              %ul
+                %li
+                  %a{:href => "https://www.yahoo.co.jp"}
+                    %span 売上金
+                    %span 1000円
+                %li
+                  %a{:href => "https://www.google.com"}
+                    %span ポイント
+                    %span 100P
+            %li
+              %a{:href => "#"} いいね一覧
+            %li
+              %a{:href => "#"} 出品した商品-出品中
+            %li
+              %a{:href => "#"} 出品した商品-取引中
+            %li
+              %a{:href => "#"} 出品した商品-売却済み
+            %li
+              %a{:href => "#"} 購入した商品-取引中
+            %li
+              %a{:href => "#"} 購入した商品-過去の取引

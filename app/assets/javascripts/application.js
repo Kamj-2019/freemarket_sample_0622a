@@ -18,7 +18,6 @@
 $(function() {
   $(window).scroll(function() {
       var dist = $(document).scrollTop();
-      console.log(dist);
       $(".top__navi--left--second").css('top', (98 - dist) + 'px');
       $(".top__navi--left--third").css('top', (98 - dist) + 'px');
   });

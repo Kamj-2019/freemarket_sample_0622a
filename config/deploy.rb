@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "~> 3.11.0"
+lock "3.11.0"
 
 # Capistranoのログの表示に利用する
 set :application, 'freemarket_sample_0622a'

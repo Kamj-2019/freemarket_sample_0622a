@@ -271,7 +271,7 @@ DEPENDENCIES
   aasm
   active_hash
   byebug
-  capistrano (= 3.11.0)
+  capistrano
   capistrano-bundler
   capistrano-rails
   capistrano-rbenv

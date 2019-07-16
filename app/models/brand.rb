@@ -49,5 +49,5 @@ class Brand < ActiveHash::Base
   create id: 47, brand: 'ベンツ'
   create id: 48, brand: 'ワーゲン'
 
-  has_many :items
+  #has_many :items
 end

@@ -7,5 +7,5 @@ class Size < ActiveHash::Base
   create id: 5, size: '26.0'
   create id: 6, size: '27.0'
 
-  has_many :items
+  #has_many :items
 end

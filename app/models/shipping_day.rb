@@ -4,5 +4,5 @@ class ShippingDay < ActiveHash::Base
   create id: 2, shipping_day: '2~3日で発送'
   create id: 3, shipping_day: '4~7日で発送'
 
-  has_many :items
+  #has_many :items
 end

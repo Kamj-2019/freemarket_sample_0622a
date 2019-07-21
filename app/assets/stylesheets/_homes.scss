@@ -1,3 +1,8 @@
+.main__visual {
+  width : 100%;
+  height: 390px;
+  background-image: image-url("main_visual.png");
+}
 .main__single-column {
   display: flex;
   width: 1020px;
@@ -5,9 +10,101 @@
   margin: 0 auto;
   padding: 40px 0 0 0;
   overflow: hidden;
+  > .content {
+    width: 1020px;
+    height: 100%;
+    background: none;
+    > section {
+      h1 {
+        width:100%;
+        text-align: center;
+        margin: 0;
+        font-size: 28px;
+        letter-spacing: 3px;
+        &.pickupbrand {
+          margin-top:110px;
+        }
+      }
+      h2 {
+        width:100%;
+        text-align: center;
+        margin: 40px 0 0 0;
+        font-size: 22px;
+        letter-spacing: 3px;
+        a {
+          text-decoration: none;
+          color:#0099e8;
+        }
+        a:hover {
+          text-decoration: underline;
+          color:#60c7fc;
+        }
+      }
+      .contents__items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width:912px;
+        margin:30px auto 15px auto;
+        font-size:0.9em;
+        text-decoration: none;
+        &-frame {
+          display:block;
+          width:214px;
+          padding:0 0 20px 0;
+          background: #fff;
+          img {
+            display:block;
+            width: 214px;
+            height: 214px;
+            margin-bottom:25px;
+          }
+          div {
+            width:174px;
+            margin:0 auto;
+            text-decoration: none;
+            div {
+              display: inline-block;
+              margin-bottom:15px;
+              line-height:1.6em;
+            }
+            .price {
+              float:left;
+              font-weight: bold;
+            }
+            .likes {
+              float:right;
+              i {
+                font-size:1.3em;
+                color: #ccc;
+              }
+            }
+          }
+        }
+      }
+      .contents__all-items {
+        width:912px;
+        margin:0 auto;
+        text-align:right;
+        a {
+          text-decoration: none;
+          color:#0099e8;
+        }
+        a:hover {
+          text-decoration: underline;
+          color:#60c7fc;
+        }
+      }
+    }
+  }
 }
-.content {
-  width: 1020px;
-  height: 100%;
-  background-color: #fdedd6;
+
+
+
+
+.main__foot-visual {
+  width : 100%;
+  height: 260px;
+  margin-top: 70px;
+  background-image: image-url("main_foot_visual.png");
 }

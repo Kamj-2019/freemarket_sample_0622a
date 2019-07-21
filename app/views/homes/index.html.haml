@@ -1,5 +1,103 @@
+= render 'layouts/header'
+.main__visual
 .main__single-column
   .content
     / コンテンツ
-    = link_to "新規登録", "users/signup"
-    = link_to "ログイン", "users/signi n"
+    = link_to "新規登録", "users/sign_up"
+    = link_to "ログイン", "users/sign_in"
+    %section
+      %h1 ピックアップカテゴリー
+      %h2
+        = link_to 'レディース新着アイテム', href: ''
+      -# 複数行コメントアウト
+        .contents__items
+          - @item.each do |item|
+          %a.contents__items-frame{href: xxx_path(item.id)}
+            = image_tag(item.image_url, width: '214', height: '214', alt: '')
+            %div
+              %div item.item_title
+              %span.price item.price
+              %span.likes
+                %i.fa.fa-heart-o{"aria-hidden": "true"}
+                139
+      .contents__items
+        %a.contents__items-frame{:href => ""}
+          = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
+          %div
+            %div 商品名商品名商品名商品名商品名
+            %span.price ¥100,000
+            %span.likes
+              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              139
+        %a.contents__items-frame{:href => ""}
+          = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
+          %div
+            %div 商品名商品名商品名商品名商品名
+            %span.price ¥100,000
+            %span.likes
+              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              139
+        %a.contents__items-frame{:href => ""}
+          = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
+          %div
+            %div 商品名商品名商品名商品名商品名
+            %span.price ¥100,000
+            %span.likes
+              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              139
+        %a.contents__items-frame{:href => ""}
+          = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
+          %div
+            %div 商品名商品名商品名商品名商品名
+            %span.price ¥100,000
+            %span.likes
+              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              139
+      .contents__all-items
+        %a{:href => ""} すべての商品を見る
+    %section
+      %h1.pickupbrand ピックアップブランド
+      %h2
+        %a{:href => ""} シャネル新着アイテム
+      .contents__items
+        %a.contents__items-frame{:href => ""}
+          = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
+          %div
+            %div 商品名商品名商品名商品名商品名
+            %span.price ¥100,000
+            %span.likes
+              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              139
+        %a.contents__items-frame{:href => ""}
+          = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
+          %div
+            %div 商品名商品名商品名商品名商品名
+            %span.price ¥100,000
+            %span.likes
+              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              139
+        %a.contents__items-frame{:href => ""}
+          = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
+          %div
+            %div 商品名商品名商品名商品名商品名
+            %span.price ¥100,000
+            %span.likes
+              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              139
+        %a.contents__items-frame{:href => ""}
+          = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
+          %div
+            %div 商品名商品名商品名商品名商品名
+            %span.price ¥100,000
+            %span.likes
+              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              139
+      .contents__all-items
+        %a{:href => ""} すべての商品を見る
+
+.main__foot-visual 
+.sellbutton
+  %a{href: "#"}
+    %p 出品
+    %i.fa.fa-camera{"aria-hidden": "true"}
+= render 'layouts/footer'

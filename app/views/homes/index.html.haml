@@ -9,19 +9,8 @@
       %h1 ピックアップカテゴリー
       %h2
         = link_to 'レディース新着アイテム', href: ''
-      -# 複数行コメントアウト
-        .contents__items
-          - @item.each do |item|
-          %a.contents__items-frame{href: xxx_path(item.id)}
-            = image_tag(item.image_url, width: '214', height: '214', alt: '')
-            %div
-              %div item.item_title
-              %span.price item.price
-              %span.likes
-                =fa_icon "heart-o"
-                139
       .contents__items
-        %a.contents__items-frame{:href => ""}
+        = link_to '', class: 'contents__items-frame' do
           = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
           %div
             %div 商品名商品名商品名商品名商品名
@@ -29,7 +18,7 @@
             %span.likes
               =fa_icon "heart-o"
               139
-        %a.contents__items-frame{:href => ""}
+        = link_to '', class: 'contents__items-frame' do
           = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
           %div
             %div 商品名商品名商品名商品名商品名
@@ -37,7 +26,7 @@
             %span.likes
               =fa_icon "heart-o"
               139
-        %a.contents__items-frame{:href => ""}
+        = link_to '', class: 'contents__items-frame' do
           = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
           %div
             %div 商品名商品名商品名商品名商品名
@@ -45,7 +34,7 @@
             %span.likes
               =fa_icon "heart-o"
               139
-        %a.contents__items-frame{:href => ""}
+        = link_to '', class: 'contents__items-frame' do
           = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
           %div
             %div 商品名商品名商品名商品名商品名
@@ -60,7 +49,7 @@
       %h2
         = link_to 'シャネル新着アイテム', ''
       .contents__items
-        %a.contents__items-frame{:href => ""}
+        = link_to '', class: 'contents__items-frame' do
           = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
           %div
             %div 商品名商品名商品名商品名商品名
@@ -68,7 +57,7 @@
             %span.likes
               =fa_icon "heart-o"
               139
-        %a.contents__items-frame{:href => ""}
+        = link_to '', class: 'contents__items-frame' do
           = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
           %div
             %div 商品名商品名商品名商品名商品名
@@ -76,7 +65,7 @@
             %span.likes
               =fa_icon "heart-o"
               139
-        %a.contents__items-frame{:href => ""}
+        = link_to '', class: 'contents__items-frame' do
           = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
           %div
             %div 商品名商品名商品名商品名商品名
@@ -84,7 +73,7 @@
             %span.likes
               =fa_icon "heart-o"
               139
-        %a.contents__items-frame{:href => ""}
+        = link_to '', class: 'contents__items-frame' do
           = image_tag("testimage.jpg", width: '214', height: '214', alt: '商品画像')
           %div
             %div 商品名商品名商品名商品名商品名
@@ -97,7 +86,7 @@
 
 .main__foot-visual 
 .sellbutton
-  %a{href: "#"}
+  = link_to '' do
     %p 出品
     =fa_icon "camera"
 = render 'layouts/footer'

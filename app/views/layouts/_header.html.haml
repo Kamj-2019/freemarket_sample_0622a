@@ -1,7 +1,6 @@
 %header
   .top__search
-    %a.top__search__logo{:href => ""}
-      %img{:src => "/assets/logo.png", :width => "135"}/
+    = link_to image_tag("logo.png", width: '135', alt: 'ロゴマーク'), root_path, class: 'top__search__logo'
     %form{"accept-charset" => "UTF-8", :action => "", :enctype => "multipart/form-data", :id => "", :method => "post"}
       %input{:placeholder => "何かお探しですか？", :type => "search", :value => ""}/
       %button{:type => "submit"}

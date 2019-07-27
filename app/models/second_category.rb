@@ -139,7 +139,7 @@ class SecondCategory < ActiveHash::Base
   create id: 137, second_category: '事務/店舗用品'
   create id: 138, second_category: 'その他'
 
-  #has_many :categories
+  has_many :categories
 end
 
 

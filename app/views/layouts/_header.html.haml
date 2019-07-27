@@ -1,17 +1,16 @@
 %header
   .top__search
-    %a.top__search__logo{:href => ""}
-      %img{:src => "/assets/logo.png", :width => "135"}/
+    = link_to image_tag("logo.png", width: '135', alt: 'ロゴマーク'), root_path, class: 'top__search__logo'
     %form{"accept-charset" => "UTF-8", :action => "", :enctype => "multipart/form-data", :id => "", :method => "post"}
       %input{:placeholder => "何かお探しですか？", :type => "search", :value => ""}/
       %button{:type => "submit"}
-        %i.fa.fa-search{"aria-hidden" => "true"}
+        =fa_icon 'search'
   %nav
     .top__navi
       %ul.top__navi--left
         %li
           = link_to "" do
-            %i.fa.fa-list-ul{"aria-hidden" => "true"}>
+            =fa_icon 'list-ul'
             カテゴリーから探す
           %ul.top__navi--left--first
             %li
@@ -768,7 +767,7 @@
               = link_to "カテゴリー一覧", ""
         %li
           = link_to "" do
-            %i.fa.fa-tag.fa-rotate-315{"aria-hidden" => "true"}>
+            =fa_icon 'tag',class: 'fa-rotate-315'
             ブランドから探す
           %ul.top__navi--left--first
             %li
@@ -786,11 +785,11 @@
       %ul.top__navi--right
         %li
           = link_to "" do
-            %i.fa.fa-heart-o{"aria-hidden" => "true"}>
+            =fa_icon 'heart-o'
             いいね！一覧
         %li
           = link_to "" do
-            %i.fa.fa-bell-o{"aria-hidden" => "true"}>
+            =fa_icon 'bell-o'
             お知らせ
           %ul.top__navi--right-info
             %li
@@ -805,27 +804,27 @@
               = link_to "d1", ""
         %li
           = link_to "" do
-            %i.fa.fa-check{"aria-hidden" => "true"}>
+            =fa_icon 'check'
             やることリスト
           %ul.top__navi--right-todo
             %li
               = link_to "現在、やることリストはありません。", ""
         %li
           = link_to "" do
-            %i.fa.fa-user-circle-o{"aria-hidden" => "true"}>
+            =fa_icon 'user-circle-o'
             マイページ
           %ul.top__navi--right-mypage
             %div
-              %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
+              =fa_icon 'user-circle-o'
               %p ニックネーム
               %p 評価：0　出品数：1
               %ul
                 %li
-                  %a{:href => "https://www.yahoo.co.jp"}
+                  = link_to '' do
                     %span 売上金
                     %span 1000円
                 %li
-                  %a{:href => "https://www.google.com"}
+                  = link_to '' do
                     %span ポイント
                     %span 100P
             %li

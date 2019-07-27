@@ -8,4 +8,5 @@ class Size < ActiveHash::Base
   create id: 6, size: '27.0'
 
   has_many :items
+  belongs_to :category, through sizes_categories
 end

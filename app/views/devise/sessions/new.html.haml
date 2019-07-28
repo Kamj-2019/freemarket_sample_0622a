@@ -1,0 +1,36 @@
+.login-page
+  = link_to class: 'login-page__top' do
+    =image_tag "/assets/logo-gray.png", class: "login-page__logo"
+
+  .login-page__main
+    .login-page__box
+
+      //アカウントの新規作成
+      .login-no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to "新規会員登録",new_user_registration_path
+
+      //facebookかGoogleでログイン
+      .login-form
+        = link_to '', class: "btn-facebook" do
+          %i.fa.fa-facebook-square
+          .option-text Facebookでログイン
+        = link_to '', class: "btn-google" do
+          %i.fa.fa-google
+          .option-text Googleでログイン
+
+      //メールアドレスでログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .login-form 
+          .form-box
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'login-input-text'
+          .form-box
+            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: 'login-input-text'
+
+          //reCAPTCHA導入予定
+          .form-box
+            %img{:src => "/assets/recaptcha.png", class:"recaptcha-image"}/
+          .actions
+            = f.submit "ログイン", class: 'btn'
+
+= render 'layouts/login_footer'

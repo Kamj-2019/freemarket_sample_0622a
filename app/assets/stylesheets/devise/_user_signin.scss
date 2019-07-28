@@ -1,11 +1,15 @@
 a {
   width: 100%;
   line-height: 48px;
-  margin: 10px 0 0;
+  margin: 15px 0 0;
   display: flex;
   justify-content: center;
   text-decoration: none;
   font-size: 14px;
+}
+
+.login-page__main {
+  margin-top: 40px;
 }
 
 .login-page__top {

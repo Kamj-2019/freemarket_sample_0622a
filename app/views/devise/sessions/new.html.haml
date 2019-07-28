@@ -1,7 +1,7 @@
 .login-page
-  .login-page__top
-    %a{:href => ""}
-      %img{:src => "/assets/logo-gray.png", class:"login-page__logo"}/
+  = link_to class: 'login-page__top' do
+    =image_tag "/assets/logo-gray.png", class: "login-page__logo"
+
   .login-page__main
     .login-page__box
 

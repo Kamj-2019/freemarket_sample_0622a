@@ -1,0 +1,109 @@
+a {
+  width: 100%;
+  line-height: 48px;
+  margin: 15px 0 0;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-page__main {
+  margin-top: 40px;
+}
+
+.login-page__top {
+  height: 128px;
+  text-align: center;
+  padding: 40px 0 0;
+}
+
+.login-page__logo {
+  width: 185px;
+  height: 49px;
+}
+
+.login-page__box {
+  background: #fff;
+  width: 456px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.login-no-account {
+  text-align: center;
+  padding: 40px 64px;
+  font-size: 14px;
+  a {
+    border: 1px solid #0099e8;
+    background: #0099e8;
+    color: #fff;
+  }
+}
+
+.login-form {
+  text-align: center;
+  padding: 24px 64px 32px;
+}
+
+.btn-facebook {
+  background: #385185;
+  color: #fff;
+}
+
+.btn-google {
+  border: #979797 solid 1px;
+  color: #000000;
+}
+
+.option-text {
+  text-align: center;
+}
+
+.fa.fa-facebook-square {
+  font-size: 26px;
+  line-height: 48px;
+  position: relative;
+  top: 0;
+  right: 45px;
+}
+
+.fa.fa-google {
+  font-size: 26px;
+  line-height: 48px;
+  color: #136FFF;
+  position: relative;
+  top: 0;
+  right: 50px;
+}
+
+.form-box {
+  margin: 24px 0 0;
+}
+
+.login-input-text {
+  width: 100%;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+//reCAPTCHA導入予定
+.recaptcha-image {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  margin: 24px 0 0;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+}

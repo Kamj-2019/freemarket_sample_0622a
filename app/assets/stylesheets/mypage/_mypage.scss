@@ -51,7 +51,7 @@ $gray1: #f5f5f5;;
         margin: 8px 0 0;
         font-size: 14px;
       }
-      .content-mypage__top--number{
+      &--number{
         display: flex;
         margin: 8px 0 0;
         justify-content: center;
@@ -86,7 +86,6 @@ $gray1: #f5f5f5;;
       color:lightgray;
       font-weight:bold;
     }
-    .mypage-item-list-tab{
       .mypage-item-list-arrow{
         position: absolute;
         font-size: 1.5rem;
@@ -99,7 +98,6 @@ $gray1: #f5f5f5;;
         height:100%;
       }
       li{
-        // background-color: yellow;
         display: block;
         position: relative;
         width: 100%;
@@ -151,6 +149,5 @@ $gray1: #f5f5f5;;
       }
       li:hover {
         background-color: #fafafa;
-      }
     }
   }

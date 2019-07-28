@@ -4,6 +4,4 @@ Rails.application.routes.draw do
 
   root 'homes#index'
 
-  #仮置き
-  get 'mypage' => 'homes#mypage'
 end

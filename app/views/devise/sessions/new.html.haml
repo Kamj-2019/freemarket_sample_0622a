@@ -27,6 +27,7 @@
           //reCAPCHA導入予定
           .form-box
             %img{:src => "/assets/recaptcha.png", class:"recaptcha-image"}/
-
           .actions
             = f.submit "ログイン", class: 'btn'
+
+= render 'layouts/login_footer'

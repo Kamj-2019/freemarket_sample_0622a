@@ -4,17 +4,14 @@ a {
   margin: 10px 0 0;
   display: flex;
   justify-content: center;
-  position: relative;
   text-decoration: none;
   font-size: 14px;
-
 }
 
 .login-page__top {
   height: 128px;
   text-align: center;
   padding: 40px 0 0;
-
 }
 
 .login-page__logo {
@@ -29,16 +26,13 @@ a {
 .login-page__box {
   background: #fff;
   margin: 0 auto;
-  height: 800px;
-
+  height: 100%;
 }
 
 .login-no-account {
   text-align: center;
   padding: 40px 64px;
   font-size: 14px;
-
-
   a {
     border: 1px solid #0099e8;
     background: #0099e8;
@@ -54,7 +48,6 @@ a {
 .btn-facebook {
   background: #385185;
   color: #fff;
-  
 }
 
 .btn-google {
@@ -64,7 +57,6 @@ a {
 
 .option-text {
   text-align: center;
-
 }
 
 .fa.fa-facebook-square {

@@ -6,19 +6,19 @@
   / マイページのアイコン
   .content-mypage
     %section.content-mypage__top
-      %a{:href => ""}
-        %figure
-          =image_tag("member_photo_noimage.png",height: "60",width:"60")
-        %h2 Nickname
-        .content-mypage__top--number
-          .content-mypage__top--evaluation
-            評価
-            %span
-              0
-          .content-mypage__top--products
-            出品数
-            %span
-              0
+      = link_to ""
+      %figure
+        =image_tag("member_photo_noimage.png",height: "60",width:"60")
+      %h2 Nickname
+      .content-mypage__top--number
+        .content-mypage__top--evaluation
+          評価
+          %span
+            0
+        .content-mypage__top--products
+          出品数
+          %span
+            0
     / マイページのお知らせ・やることリスト
     %section.content-mypage_notification-todo
       %input#notice{name: "tab_item1", type: "radio", checked: "checked"}
@@ -29,65 +29,65 @@
       .tab_content#notice_content
         .mypage-item-list-tab#mypage-tab-notification
           %li
-            %a
-              =image_tag("mercari_profile.png", height: "48px", width:"48px")
-              = fa_icon "angle-right", class: "mypage-item-list-arrow"
-              .mypage-item-body
-                .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知]
-                .time
-                  .time-icon
-                    = fa_icon "clock-o", class: "tab-content__icon--time"
-                    %span
-                      1日前
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
           %li
-            %a
-              =image_tag("mercari_profile.png", height: "48px", width:"48px")
-              = fa_icon "angle-right", class: "mypage-item-list-arrow"
-              .mypage-item-body
-                .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知]
-                .time
-                  .time-icon
-                    = fa_icon "clock-o", class: "tab-content__icon--time"
-                    %span
-                      1日前
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
           %li
-            %a
-              =image_tag("mercari_profile.png", height: "48px", width:"48px")
-              = fa_icon "angle-right", class: "mypage-item-list-arrow"
-              .mypage-item-body
-                .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知]
-                .time
-                  .time-icon
-                    = fa_icon "clock-o", class: "tab-content__icon--time"
-                    %span
-                      1日前
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
           %li
-            %a
-              =image_tag("mercari_profile.png", height: "48px", width:"48px")
-              = fa_icon "angle-right", class: "mypage-item-list-arrow"
-              .mypage-item-body
-                .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知]
-                .time
-                  .time-icon
-                    = fa_icon "clock-o", class: "tab-content__icon--time"
-                    %span
-                      1日前
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
           %li
-            %a
-              =image_tag("mercari_profile.png", height: "48px", width:"48px")
-              = fa_icon "angle-right", class: "mypage-item-list-arrow"
-              .mypage-item-body
-                .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知]
-                .time
-                  .time-icon
-                    = fa_icon "clock-o", class: "tab-content__icon--time"
-                    %span
-                      1日前
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
           %li#tab-content__list
             = link_to "一覧をみる" , class: "tab-content__list--link"
         -# .mypage-item-not-found
@@ -103,7 +103,7 @@
       -#       =link_to "事務局から個別メッセージ「ログイン通知」"
       -#   .mypage-item-list#mypage-tab-notification
       -#   .mypage-item-list#mypage-tab-todo
-    
+
     -# = render 'mypage/bottom'
     %section.mypage-tab-container
       .mypage-tab-title
@@ -116,22 +116,22 @@
         -# お知らせ・やることリストの中身のコンテナー
         .tab-content-buy#underdeal_content
           %li
-            %a
-              =image_tag("mercari_profile.png", height: "48px", width:"48px")
-              = fa_icon "angle-right", class: "mypage-item-list-arrow"
-              .mypage-item-body
-                .mypage-item-text
-                  [柄物]ワンピース（No Brand）
-                .time
-                  .time-icon
-                    = fa_icon "clock-o", class: "tab-content__icon--time"
-                    %span
-                      1日前
+            =link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                [柄物]ワンピース（No Brand）
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
         .tab-content-buy#pastdeal_content
           .mypage-item-not-found
             %p.c-text 過去に取引した商品がありません
 .sellbutton
-  %a{:href => "#"}
+  = link_to '' do
     %p 出品
-    %i.fa.fa-camera{"aria-hidden" => "true"}
+    =fa_icon "camera"
 = render 'layouts/footer'

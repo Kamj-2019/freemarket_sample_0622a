@@ -4,5 +4,6 @@ class Evaluation < ActiveHash::Base
   create id: 2, evaluation: '普通'
   create id: 3, evaluation: '悪い'
 
-  #has_many :users
+  has_many :users_evaluations
+  has_many :users, through: :users_evaluations
 end

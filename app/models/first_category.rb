@@ -15,5 +15,5 @@ class FirstCategory < ActiveHash::Base
   create id: 13, first_category: 'その他'
   create id: 14, first_category: 'カテゴリー一覧'
 
-  #has_many :categories
+  has_many :categories
 end

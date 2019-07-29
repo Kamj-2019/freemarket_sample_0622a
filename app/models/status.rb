@@ -7,5 +7,5 @@ class Status < ActiveHash::Base
   create id: 5, status: '傷や汚れあり'
   create id: 6, status: '全体的に状態が悪い'
 
-  #has_many :items
+  has_many :items
 end

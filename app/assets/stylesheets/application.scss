@@ -18,6 +18,7 @@
  *= require font-awesome
  */
 
+@import "config/reset";
 @import "modules/variable";
 @import "modules/base";
 @import "modules/header";
@@ -27,6 +28,6 @@
 @import "mypage/tab";
 @import "mypage/mypage";
 @import "mypage/bottom";
-@import "config/reset";
-@import "font-awesome";
-@import "devise/user_signin"
+
+// @import "font-awesome";
+// @import "devise/user_signin"

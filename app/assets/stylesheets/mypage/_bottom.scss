@@ -1,3 +1,6 @@
+$gray1: #f5f5f5;;
+
+/* 購入の大枠 */
 .mypage-tab-container{
   margin: 40px 0 0;
   background-color: #fff;
@@ -19,16 +22,14 @@
       position:absolute;
     }
     li{
-      display: block;
+      display: flex;
       position: relative;
       width: 100%;
       padding: 16px;
       min-height: 80px;
       height: 100%;
       color: #333;
-      border-bottom: 1px solid #f5f5f5;
-      a {
-        display: block;
+      border-bottom: 1px solid $gray1;
         img {
           display: block;
           float: left;
@@ -54,5 +55,7 @@
         } 
       }
     }
+  li:hover {
+    background-color: #fafafa;
   }
 }

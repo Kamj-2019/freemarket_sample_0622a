@@ -1,0 +1,61 @@
+$gray1: #f5f5f5;;
+
+/* 購入の大枠 */
+.mypage-tab-container{
+  margin: 40px 0 0;
+  background-color: #fff;
+  .mypage-tab-title{
+    padding: 0 16px;
+    line-height: 74px;
+  }
+  .mypage-tab-box{
+    height: 74px;
+  }
+  .tab-content-buy{
+    background-color: #fff;
+    clear: both;
+    display: none;
+    .mypage-item-list-arrow{
+      font-size: 1.5rem;
+      right: 16px;
+      top: 30px;
+      position:absolute;
+    }
+    li{
+      display: flex;
+      position: relative;
+      width: 100%;
+      padding: 16px;
+      min-height: 80px;
+      height: 100%;
+      color: #333;
+      border-bottom: 1px solid $gray1;
+        img {
+          display: block;
+          float: left;
+          margin: 0 16px 0 0;
+          width: 48px;
+          height: 48px;
+        }
+        .mypage-item-body {
+          text-align: left;
+          .mypage-item-text{
+            text-overflow: ellipsis;
+            max-height: 4.4em;
+            line-height: 1.5;
+          .time{
+            &-icon{
+              font-size: 16px;
+              vertical-align: middle;
+              margin: 0 8px 0 0;
+              color: #888;
+              }
+            }
+          }
+        } 
+      }
+    }
+  li:hover {
+    background-color: #fafafa;
+  }
+}

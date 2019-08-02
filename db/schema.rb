@@ -32,29 +32,11 @@ ActiveRecord::Schema.define(version: 20190723113419) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "item_title",            limit: 65535, null: false
-    t.text     "description",           limit: 65535, null: false
-    t.integer  "category_id",                         null: false
-    t.integer  "size_id",                             null: false
-    t.integer  "brand_id",                            null: false
-    t.integer  "status_id",                           null: false
-    t.integer  "delivery_fee_payer_id",               null: false
-    t.integer  "delivery_method_id",                  null: false
-    t.integer  "prefecture_id",                       null: false
-    t.integer  "shipping_day_id",                     null: false
-    t.integer  "price",                               null: false
-    t.integer  "user_id",                             null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
-    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
-    t.index ["delivery_fee_payer_id"], name: "index_items_on_delivery_fee_payer_id", using: :btree
-    t.index ["delivery_method_id"], name: "index_items_on_delivery_method_id", using: :btree
-    t.index ["prefecture_id"], name: "index_items_on_prefecture_id", using: :btree
-    t.index ["shipping_day_id"], name: "index_items_on_shipping_day_id", using: :btree
-    t.index ["size_id"], name: "index_items_on_size_id", using: :btree
-    t.index ["status_id"], name: "index_items_on_status_id", using: :btree
-    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
+    t.text     "item_title",  limit: 65535, null: false
+    t.text     "description", limit: 65535, null: false
+    t.integer  "price",                     null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -1,0 +1,57 @@
+$gray1: #f5f5f5;
+
+/* やることリストのラジオボタンを全て消す */
+input[name="tab_item1"] {
+  display: none;
+}
+/* 購入のラジオボタンを全て消す */
+input[name="tab_item2"] {
+  display: none;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+#notice:checked ~ #notice_content,
+#todo:checked ~ #todo_content,
+#underdeal:checked ~ #underdeal_content,
+#pastdeal:checked ~ #pastdeal_content{
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+/*やることリスト*/
+.content-mypage_notification-todo input:checked + .tab_item1 {
+  border-top:2px solid red;
+  background-color: white;
+}
+/*購入リスト*/
+.mypage-tab-box input:checked + .tab_item2 {
+  border-top:2px solid red;
+  background-color: white;
+}
+
+/* やることリスト・お知らせのタブの部分 */
+.tab_item1{
+  width: calc(100%/2);
+  line-height: 74px;
+  font-size: 16px;
+  text-align: center;
+  float: left;
+  background-color:  #eee;
+}
+
+/* 購入(tab-bottom)タブの部分 */
+.tab_item2{
+  width: calc(100%/2);
+  line-height: 74px;
+  font-size: 16px;
+  text-align: center;
+  float: left;
+  background-color: #eee;
+}
+
+.mypage-item-not-found{
+  padding:160px 0 60px;
+  color:lightgray;
+  font-weight:bold;
+  text-align: center;
+}

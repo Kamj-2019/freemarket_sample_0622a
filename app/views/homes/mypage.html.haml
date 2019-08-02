@@ -1,69 +1,137 @@
-
-.pankuzu
-  .pankuzu-inner
-    %p
-      = link_to "メルカリ", ""
-      　マイページ
+= render 'layouts/header'
+= render 'layouts/pankuzu'
 .main__double-column
-  .sidebar
-    %nav
-      %ul
-        %li
-          = link_to "マイページ", ""
-        %li
-          = link_to "お知らせ", ""
-        %li
-          = link_to "やることリスト", ""
-        %li
-          = link_to "いいね！一覧", ""
-        %li
-          = link_to "出品する", ""
-        %li
-          = link_to "出品した商品 - 出品中", ""
-        %li
-          = link_to "出品した商品 - 取引中", ""
-        %li
-          = link_to "出品した商品 - 売却済み", ""
-        %li
-          = link_to "購入した商品 - 取引中", ""
-        %li
-          = link_to "購入した商品 - 過去の取引", ""
-        %li
-          = link_to "ニュース一覧", ""
-        %li
-          = link_to "評価一覧", ""
-        %li
-          = link_to "ガイド", ""
-        %li
-          = link_to "お問い合わせ", ""
-      %p メルペイ
-      %ul
-        %li
-          = link_to "売上・振込申請", ""
-        %li
-          = link_to "ポイント", ""
-      %p 設定
-      %ul
-        %li
-          = link_to "プロフィール", ""
-        %li
-          = link_to "発送元・お届け先住所変更", ""
-        %li
-          = link_to "支払い方法", ""
-        %li
-          = link_to "メール/パスワード", ""
-        %li
-          = link_to "本人情報", ""
-        %li
-          = link_to "電話番号の確認", ""
-        %li
-          = link_to "ログアウト", ""
-  .content
-    / コンテンツ
-    = link_to "新規登録", "users/signup"
-    = link_to "ログイン", "users/signi n"
-.sellbutton
-  %a{:href => "#"}
-    %p 出品
-    %i.fa.fa-camera{"aria-hidden" => "true"}
+  -# マイページのサイドバーのコンテナー
+  = render 'layouts/sidebar'
+  / マイページのアイコン
+  .content-mypage
+    %section.content-mypage__top
+      = link_to ""
+      %figure
+        =image_tag("member_photo_noimage.png",height: "60",width:"60")
+      %h2 Nickname
+      .content-mypage__top--number
+        .content-mypage__top--evaluation
+          評価
+          %span
+            0
+        .content-mypage__top--products
+          出品数
+          %span
+            0
+    / マイページのお知らせ・やることリスト
+    %section.content-mypage_notification-todo
+      %input#notice{name: "tab_item1", type: "radio", checked: "checked"}
+      %label.tab_item1{for: "notice"}お知らせ
+      %input#todo{name: "tab_item1", type: "radio"}
+      %label.tab_item1{for: "todo"}やることリスト
+      -# お知らせ・やることリストの中身のコンテナー
+      .tab_content#notice_content
+        .mypage-item-list-tab#mypage-tab-notification
+          %li
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
+          %li
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
+          %li
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
+          %li
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
+          %li
+            = link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知]
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
+          %li#tab-content__list
+            = link_to "一覧をみる" , class: "tab-content__list--link"
+        -# .mypage-item-not-found
+        -#   %p.c-text 現在、お知らせはありません
+      .tab_content#todo_content
+        .mypage-item-not-found
+          %p.c-text 現在、やることリストはありません
 
+      -# アイテムが出たらこっちになる
+      -# %div.tab-content
+        -# %ul.mypage-tab-notification
+      -#     %li.mypage-link
+      -#       =link_to "事務局から個別メッセージ「ログイン通知」"
+      -#   .mypage-item-list#mypage-tab-notification
+      -#   .mypage-item-list#mypage-tab-todo
+
+    -# = render 'mypage/bottom'
+    %section.mypage-tab-container
+      .mypage-tab-title
+        購入した商品
+      .mypage-tab-box
+        %input#underdeal{name: "tab_item2", type: "radio", checked: "checked"}
+        %label.tab_item2{for: "underdeal"}取引中
+        %input#pastdeal{name: "tab_item2", type: "radio"}
+        %label.tab_item2{for: "pastdeal"}過去の取引
+        -# お知らせ・やることリストの中身のコンテナー
+        .tab-content-buy#underdeal_content
+          %li
+            =link_to ""
+            =image_tag("mercari_profile.png", height: "48px", width:"48px")
+            = fa_icon "angle-right", class: "mypage-item-list-arrow"
+            .mypage-item-body
+              .mypage-item-text
+                [柄物]ワンピース（No Brand）
+              .time
+                .time-icon
+                  = fa_icon "clock-o", class: "tab-content__icon--time"
+                  %span
+                    1日前
+        .tab-content-buy#pastdeal_content
+          .mypage-item-not-found
+            %p.c-text 過去に取引した商品がありません
+.sellbutton
+  = link_to '' do
+    %p 出品
+    =fa_icon "camera"
+= render 'layouts/footer'

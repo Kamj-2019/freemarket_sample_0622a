@@ -18,13 +18,17 @@
  *= require font-awesome
  */
 
+@import "config/reset";
 @import "modules/variable";
 @import "modules/base";
 @import "modules/header";
 @import "modules/sidebar";
 @import "modules/footer";
 @import "homes";
-@import "mypage";
-@import "config/reset";
+@import "mypage/tab";
+@import "mypage/mypage";
+@import "mypage/middle";
+@import "mypage/bottom";
+
 @import "font-awesome";
 @import "devise/user_signin"

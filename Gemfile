@@ -73,4 +73,4 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
-
+gem 'seed-fu', '~> 2.3'

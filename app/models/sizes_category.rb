@@ -1,4 +1,4 @@
 class SizesCategory < ApplicationRecord
-  belongs_to_active_hash :size
-  belongs_to_active_hash :category
+  belongs_to :size
+  belongs_to :category
 end

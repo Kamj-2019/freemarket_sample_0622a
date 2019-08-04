@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   get 'mypage' => 'homes#mypage'
   root 'homes#index'
 
+  resources :users do
+    collection do
+      get 'logout'
+    end
+  end
+
 end

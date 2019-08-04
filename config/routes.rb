@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :items
-  resources :users
-
+  resources :users do
+    collection do
+      get 'logout'
+    end
+  end
 end

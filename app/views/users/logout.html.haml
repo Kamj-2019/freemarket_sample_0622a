@@ -1,0 +1,6 @@
+= render partial: 'layouts/header'
+.main__double-column
+  = render partial: 'layouts/sidebar'
+  .content-logout
+    .content-logout__form
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn' 

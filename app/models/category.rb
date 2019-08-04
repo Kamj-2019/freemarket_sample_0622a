@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
-  belongs_to_active_hash :first_category
-  belongs_to_active_hash :second_category
-  belongs_to_active_hash :third_category
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :first_category
+  belongs_to :second_category
+  belongs_to :third_category
 end

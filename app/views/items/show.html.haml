@@ -1,0 +1,263 @@
+= render "layouts/header"
+
+%nav.brand-crumbs
+  %ul
+    %li
+      メルカリ
+    %li
+      >
+    %li
+      %span
+        商品のジャンル
+
+.item-detail
+  .l-container
+    .l-content
+      .l-content__container
+        %h2.item-detail-name
+          -# = @item.name
+          サッカーボール
+        .saler-box
+        %end
+        .item-content
+          .item-content__main-photo
+            -# = image_tag @item.image
+            %img{src: "/assets/soccer.jpg", width: "135"}
+          -# - if @item.sold?
+          -# .item-sold-out-badge
+          -#   SOLD
+          %end
+          .item-content__sub-photo
+            -# = image_tag @item.image
+            %img{src: "/assets/yohkai.jpg", width: "135"}
+          .item-content__sub-photo
+            -# = image_tag @item.image
+            %img{src: "/assets/spider.jpg", width: "135"}
+          .item-content__sub-photo
+            -# = image_tag @item.image
+            %img{src: "/assets/puma.jpg", width: "135"}
+          .item-content__sub-photo
+            -# = image_tag @item.image
+            %img{src: "/assets/soccer.jpg", width: "135"}
+        %table.item-detail-table
+          %tbody
+            %tr
+              %th
+                出品者
+              %td
+                = link_to "#", ""
+                .item-user-rating
+                  %i.icon-good
+                .item-user-rating
+                  %i.icon-normal
+                .item-user-rating
+                  %i.icon-bad
+            %tr
+              %th
+                カテゴリー
+              %td
+                = link_to "第一カテゴリー", "#"
+                <br>
+                = link_to ">第二カテゴリー", "#"
+                <br>
+                = link_to ">第三カテゴリー", "#"
+            %tr
+              %th
+                ブランド
+              %td
+                = link_to "ナイキ", "#"
+            %tr
+              %th
+                商品の状態
+              %td
+                新品
+            %tr
+              %th
+                配送料の負担
+              %td
+                着払い（購入者負担）
+            %tr
+              %th
+                配送の方法
+              %td
+                未定
+            %tr
+              %th
+                配送元地域
+              %td
+                = link_to "東京都", "#"
+            %tr
+              %th
+                配送の目安
+              %td
+                1~2日で発送
+
+
+      .item-detail-price
+        %span.item-detail-price__bold
+          ¥1,000
+        %span.item-detail-price__tax
+          （税込）
+        %span.item-detail-price__shipping-fee
+          着払い
+      .item-buy-btn__gray
+        売り切れました
+
+      .item-description
+        %p
+          非常に良い状態です。
+
+      .item-button-container
+        .item-button-left
+          %button.item-button.item-button-like
+            %span.likes
+              =fa_icon "heart-o"
+            %span
+              いいね!
+          %button.item-button.item-button-report.clearfix
+            %span.report
+              =fa_icon 'flag'
+            %span
+              不適切な商品の報告
+        .item-button-right
+          %span.icon-lock
+            =fa_icon 'lock-alt'
+          %span
+            あんしん・あんぜんへの取り組み
+
+.item-detail
+  .l-container
+    .comment-box
+      .comment-contents
+        %img{src: "/assets/icon.jpg", class: "user-image", width: "30"}
+        .user-name
+          %p
+            太郎
+        .comment
+          %h2
+            どのくらい使用したものでしょうか？
+          .comment-date
+            -# %span.time
+            -#   =fa_icon 'clock'
+            %h2
+              ４日前
+      .comment-contents
+        %img{src: "/assets/icon.jpg", class: "user-image", width: "30"}
+        .user-name
+          %p
+            二郎
+        .comment
+          %h2
+            サイズは何号でしょうか？
+          .comment-date
+            %h2
+              ３日前
+      .comment-contents
+        %img{src: "/assets/icon.jpg", class: "user-image", width: "30"}
+        .user-name
+          %p
+            三郎
+        .comment
+          %h2
+            素材は革ですか？ゴムですか？
+          .comment-date
+            %h2
+              ２日前
+    .precautionary-note
+      %p
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。    
+    %textarea{name: "url"}
+
+    .selling-state
+      %h3
+        売り切れのためコメントできません
+
+%ul.nav-item-link-prev-next
+  %li.nav-item-link-prev
+    = link_to '< 前の商品', '' 
+  %li.nav-item-link-next
+    = link_to '次の商品 >', ''
+
+.item-detail
+  .social-media-box
+    .icon-box
+      %i.fa.fa-facebook
+    .icon-box
+      %i.fa.fa-twitter
+    .icon-box
+      -# = fa_icon "line", class: "fa-line"
+      %i.fa.fa-line
+    .icon-box
+      %i.fa.fa-pinterest
+
+.other-items
+  .other-item
+    %h2
+      出品者のその他の出品
+
+.items-box-content
+  %section
+    %h2
+    .contents__items
+      = link_to '', class: 'contents__items-frame' do
+        = image_tag("abe.jpg", alt: '商品画像', width: '214px')
+        %div
+          %div 安倍さん
+          %span.price ¥100
+          %span.likes
+            =fa_icon "heart-o"
+            1
+      = link_to '', class: 'contents__items-frame' do
+        = image_tag("noda.jpg", alt: '商品画像', width: '214px')
+        %div
+          %div 野田さん
+          %span.price ¥1,000
+          %span.likes
+            =fa_icon "heart-o"
+            10
+      = link_to '', class: 'contents__items-frame' do
+        = image_tag("kan.jpg", alt: '商品画像', width: '214px')
+        %div
+          %div 菅さん
+          %span.price ¥10,000
+          %span.likes
+            =fa_icon "heart-o"
+            100
+
+.other-items
+  .other-item
+    %h2
+      サッカーボール その他の出品
+
+.items-box-content
+  %section
+    %h2
+    .contents__items
+      = link_to '', class: 'contents__items-frame' do
+        = image_tag("abe.jpg", alt: '商品画像', width: '214px')
+        %div
+          %div 安倍さん
+          %span.price ¥100,000
+          %span.likes
+            =fa_icon "heart-o"
+            100
+      = link_to '', class: 'contents__items-frame' do
+        = image_tag("noda.jpg", alt: '商品画像', width: '214px')
+        %div
+          %div 野田さん
+          %span.price ¥1,000
+          %span.likes
+            =fa_icon "heart-o"
+            10
+      = link_to '', class: 'contents__items-frame' do
+        = image_tag("kan.jpg", alt: '商品画像', width: '214px')
+        %div
+          %div 菅さん
+          %span.price ¥100
+          %span.likes
+            =fa_icon "heart-o"
+            1
+
+.main-visual
+
+= render "layouts/footer"

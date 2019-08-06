@@ -18,6 +18,7 @@
  *= require font-awesome
  */
 
+@import "config/reset";
 @import "modules/variable";
 @import "modules/base";
 @import "modules/header";
@@ -25,6 +26,5 @@
 @import "modules/footer";
 @import "homes";
 @import "mypage";
-@import "config/reset";
-@import "font-awesome";
 
+@import "font-awesome";

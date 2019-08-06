@@ -1,9 +1,9 @@
 class HomesController < ApplicationController
-end
 
-def index
+  def index
+  end
 
-end
+  def mypage
+  end
 
-def mypage
 end

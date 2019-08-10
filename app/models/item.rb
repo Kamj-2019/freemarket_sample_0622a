@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :size
   belongs_to :status
-  belongs_to :brand
+  belongs_to :brand, optional: true
   belongs_to :delivery_fee_payer
   belongs_to :delivery_method
   belongs_to :prefecture

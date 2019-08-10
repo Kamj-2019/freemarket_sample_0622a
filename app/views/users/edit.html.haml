@@ -1,0 +1,80 @@
+= render 'layouts/header'
+= render 'layouts/pankuzu'
+.main__double-column
+  -# サイドバーのコンテナー
+  = render 'layouts/sidebar'
+  .content-id
+    .content-id__title
+      本人情報の登録
+    .content-id__box
+      .content-id__box--notice
+        %p
+          お客さまの本人情報をご登録ください。
+          %br/
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+      .content-id__box--upload
+        %p
+          = link_to '本人確認書類のアップロードについて', href:''
+          = fa_icon "angle-right", class: "mypage-item-list-arrow"
+      .content-id__box--form
+        %label
+          お名前
+        %p
+          姓名
+      .content-id__box--form
+        %label
+          お名前カナ
+        %p
+          セイメイ
+      .content-id__box--form
+        %label
+          生年月日
+        %p
+          2019/08/06
+      .content-id__box--form
+        %label
+          郵便番号
+        %span
+          任意          
+        %input{placeholder: "例）1233456"}
+      -#  フォームの単体の箱を作成
+      .content-id__box--form
+        = form_for '' do |f|
+          .content-id__box--form
+            %label#content-id__box--form--label
+              都道府県
+            %span#content-id__box--form--arbitrary
+              任意
+            .content-id__box--form--input
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, prompt: "--", class: 'input'
+              -# = fa_icon "chevron-down", class: "identification__form-icon"
+
+      .content-id__box--form
+        %label
+          市区町村
+        %span
+          任意
+        %input{placeholder: "例）横浜市緑区"}
+      .content-id__box--form
+        %label
+          番地
+        %span
+          任意
+        %input{placeholder: "例）青山1-1-1"} 
+      .content-id__box--form
+        %label
+          建物名
+        %span
+          任意
+        %input{placeholder: "例）柳ビル"} 
+      .content-id__box--form
+        %button#id-resistration{type:"button"} 登録する
+      .content-id__box--upload
+        %p
+          = link_to '本人情報の登録について', href:''
+          = fa_icon "angle-right", class: "mypage-item-list-arrow"
+.sellbutton
+  = link_to '' do
+    %p 出品
+    =fa_icon "camera"
+= render 'layouts/footer'

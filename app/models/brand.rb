@@ -48,5 +48,10 @@ class Brand < ActiveHash::Base
     {id: 46, brand: 'アウディ'},
     {id: 47, brand: 'ベンツ'},
     {id: 48, brand: 'ワーゲン'},
+    {id: 49, brand: 'シャネル'},
+    {id: 50, brand: 'ルイ ヴィトン'},
+    {id: 51, brand: 'ナイキ'},
+    {id: 52, brand: 'シュプリーム'},
+    {id: 53, brand: 'アディダス'}
   ]
 end

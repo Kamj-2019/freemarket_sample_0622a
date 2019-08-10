@@ -1,53 +1,57 @@
 class Brand < ActiveHash::Base
-  field :brand
-  create id: 1, brand: 'アーヴェヴェ'
-  create id: 2, brand: 'アーカー'
-  create id: 3, brand: 'アーキ'
-  create id: 4, brand: 'イアパピヨネ'
-  create id: 5, brand: 'イーエーピー'
-  create id: 6, brand: 'イーエム'
-  create id: 7, brand: 'ヴァイスヴァーサ'
-  create id: 8, brand: 'ヴァレンリ'
-  create id: 9, brand: 'ヴィアサザビー'
-  create id: 10, brand: 'アーリッカ'
-  create id: 11, brand: 'アイブイブイ'
-  create id: 12, brand: 'アイムプロダクト'
-  create id: 13, brand: 'アーネスト'
-  create id: 14, brand: 'アイアンウッド'
-  create id: 15, brand: 'アイトー'
-  create id: 16, brand: 'アーノルドパーマータイムレス'
-  create id: 17, brand: 'アールエフ'
-  create id: 18, brand: 'アイクポッド'
-  create id: 19, brand: 'アージュレス'
-  create id: 20, brand: 'アースセラプティクス'
-  create id: 21, brand: 'アーダブレーン'
-  create id: 22, brand: 'ウィー'
-  create id: 23, brand: 'エックスボックス'
-  create id: 24, brand: 'ゲームボーイ'
-  create id: 25, brand: 'アイスブレーカー'
-  create id: 26, brand: 'アイパス'
-  create id: 27, brand: 'アウトドア'
-  create id: 28, brand: 'アップル'
-  create id: 29, brand: 'サムスン'
-  create id: 30, brand: '東芝'
-  create id: 31, brand: 'カワサキ'
-  create id: 32, brand: 'スズキ'
-  create id: 33, brand: 'ホンダ'
-  create id: 34, brand: 'ギブソン'
-  create id: 35, brand: 'フェンダー'
-  create id: 36, brand: 'ヤマハ'
-  create id: 37, brand: 'アルパイン'
-  create id: 38, brand: 'イクリプス'
-  create id: 39, brand: 'いすゞ'
-  create id: 40, brand: 'アサヒビール'
-  create id: 41, brand: '磯自慢'
-  create id: 42, brand: '一ノ蔵'
-  create id: 43, brand: 'トヨタ'
-  create id: 44, brand: '日産'
-  create id: 45, brand: 'レクサス'
-  create id: 46, brand: 'アウディ'
-  create id: 47, brand: 'ベンツ'
-  create id: 48, brand: 'ワーゲン'
-
-  has_many :items
+  self.data = [
+    {id: 1, brand: 'アーヴェヴェ'},
+    {id: 2, brand: 'アーカー'},
+    {id: 3, brand: 'アーキ'},
+    {id: 4, brand: 'イアパピヨネ'},
+    {id: 5, brand: 'イーエーピー'},
+    {id: 6, brand: 'イーエム'},
+    {id: 7, brand: 'ヴァイスヴァーサ'},
+    {id: 8, brand: 'ヴァレンリ'},
+    {id: 9, brand: 'ヴィアサザビー'},
+    {id: 10, brand: 'アーリッカ'},
+    {id: 11, brand: 'アイブイブイ'},
+    {id: 12, brand: 'アイムプロダクト'},
+    {id: 13, brand: 'アーネスト'},
+    {id: 14, brand: 'アイアンウッド'},
+    {id: 15, brand: 'アイトー'},
+    {id: 16, brand: 'アーノルドパーマータイムレス'},
+    {id: 17, brand: 'アールエフ'},
+    {id: 18, brand: 'アイクポッド'},
+    {id: 19, brand: 'アージュレス'},
+    {id: 20, brand: 'アースセラプティクス'},
+    {id: 21, brand: 'アーダブレーン'},
+    {id: 22, brand: 'ウィー'},
+    {id: 23, brand: 'エックスボックス'},
+    {id: 24, brand: 'ゲームボーイ'},
+    {id: 25, brand: 'アイスブレーカー'},
+    {id: 26, brand: 'アイパス'},
+    {id: 27, brand: 'アウトドア'},
+    {id: 28, brand: 'アップル'},
+    {id: 29, brand: 'サムスン'},
+    {id: 30, brand: '東芝'},
+    {id: 31, brand: 'カワサキ'},
+    {id: 32, brand: 'スズキ'},
+    {id: 33, brand: 'ホンダ'},
+    {id: 34, brand: 'ギブソン'},
+    {id: 35, brand: 'フェンダー'},
+    {id: 36, brand: 'ヤマハ'},
+    {id: 37, brand: 'アルパイン'},
+    {id: 38, brand: 'イクリプス'},
+    {id: 39, brand: 'いすゞ'},
+    {id: 40, brand: 'アサヒビール'},
+    {id: 41, brand: '磯自慢'},
+    {id: 42, brand: '一ノ蔵'},
+    {id: 43, brand: 'トヨタ'},
+    {id: 44, brand: '日産'},
+    {id: 45, brand: 'レクサス'},
+    {id: 46, brand: 'アウディ'},
+    {id: 47, brand: 'ベンツ'},
+    {id: 48, brand: 'ワーゲン'},
+    {id: 49, brand: 'シャネル'},
+    {id: 50, brand: 'ルイ ヴィトン'},
+    {id: 51, brand: 'ナイキ'},
+    {id: 52, brand: 'シュプリーム'},
+    {id: 53, brand: 'アディダス'}
+  ]
 end

@@ -49,32 +49,30 @@
 .btn-facebook {
   background: #385185;
   color: #fff;
+  i {
+    font-size: 26px;
+    line-height: 48px;
+    position: relative;
+    top: 0;
+    right: 45px;
+  }
 }
 
 .btn-google {
   border: #979797 solid 1px;
   color: #000000;
+  i {
+    font-size: 26px;
+    line-height: 48px;
+    color: #136FFF;
+    position: relative;
+    top: 0;
+    right: 50px;
+  }
 }
 
 .option-text {
   text-align: center;
-}
-
-.fa.fa-facebook-square {
-  font-size: 26px;
-  line-height: 48px;
-  position: relative;
-  top: 0;
-  right: 45px;
-}
-
-.fa.fa-google {
-  font-size: 26px;
-  line-height: 48px;
-  color: #136FFF;
-  position: relative;
-  top: 0;
-  right: 50px;
 }
 
 .form-box {

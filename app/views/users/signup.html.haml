@@ -1,0 +1,26 @@
+.single-container
+  %header.single-header
+    %h1
+      = link_to '/' do
+        =image_tag "/assets/logo-gray.png", class: "single-header__logo"
+  .single-main
+    %section.signup-container
+      %h2 新規会員登録
+      .signup-inner
+        .signup-content
+          //メールアドレスでの登録
+          %button.btn-default.btn-mail
+            = link_to "メールアドレスで登録する", new_user_registration_path
+            %i.fa.fa-envelope
+          //facebookでの登録
+          %button.btn-default.btn-sns-facebook
+            = link_to "facebookで登録する", ""
+            %i.fa.fa-facebook-square
+          //Googleでの登録
+          %button.btn-default.btn-sns-google
+            = link_to "Googleで登録する", ""
+            %i.fa.fa-google
+= render 'layouts/login_footer'
+
+
+  

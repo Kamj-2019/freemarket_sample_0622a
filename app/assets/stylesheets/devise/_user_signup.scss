@@ -1,0 +1,94 @@
+//variableで統一する予定
+$bodybasegray: #f5f5f5;
+$bodybasewhite: #fff;
+
+.single-header {
+  height: 128px;
+  background-color: $bodybasegray;
+  text-align: center;
+  border-width: 0;
+  h1 {
+    line-height: 128px;
+  }  
+  &__logo {
+    width: 185px;
+    height: 55px;
+  }
+}
+
+.signup-container {
+  background-color: $bodybasewhite;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  h2 {
+    font-size: 22px;
+    padding: 32px;
+    margin: 0;
+  }
+}
+
+.signup-inner {
+  border-top: 1px solid #f5f5f5;
+  padding: 40px 40px 64px;
+}
+
+.signup-content {
+  max-width: 343px;
+  margin: 0 auto;
+}
+
+.btn-default {
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  border: 1px solid transparent;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.btn-mail {
+  background-color: #ea352d;
+  position: relative;
+  a {
+    color: $bodybasewhite;
+  }
+  i {
+    color: $bodybasewhite;
+    font-size: 26px;
+    position: absolute;
+    top: 20%;
+    left: 16px;
+  }
+}
+
+.btn-sns-facebook {
+  background: #385185;
+  margin: 16px 0 0;
+  position: relative;
+  a {
+    color: $bodybasewhite;
+  }
+  i {
+    color: $bodybasewhite;
+    font-size: 26px;
+    position: absolute;
+    top: 20%;
+    left: 16px;
+  }
+}
+
+.btn-sns-google {
+  margin: 16px 0 0;
+  border: #979797 solid 1px;
+  position: relative;
+  i {
+    color: #136FFF;
+    font-size: 26px;
+    position: absolute;
+    top: 20%;
+    left: 16px;
+  } 
+}

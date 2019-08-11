@@ -19,7 +19,6 @@
   width: 100%;
   background: rgb(245, 245, 245);
   margin: 0px auto;
-  // border: solid 1px #333;
 }
 
 .l-container {
@@ -34,7 +33,6 @@
 }
 
 .l-content {
-  // border: solid 1px #333;
   margin: 40px auto 0px;
   width: 700px;
   background: #fff;
@@ -379,7 +377,6 @@
     clear: both;
   }
   .user-name {
-    // position: absolute; left: 50px;
     font-weight: bold;
   }
 }
@@ -480,8 +477,6 @@
     line-height: 40px;
     color: white;
     background-color: #5ae628;
-    // font-family: "icon-font Free";
-    // content: "\f3c0";
   }
   .fa-line::before {
     font-weight: 900;

@@ -15,30 +15,21 @@
     .l-content
       .l-content__container
         %h2.item-detail-name
-          -# = @item.name
           サッカーボール
         .saler-box
         %end
         .item-content
           .item-content__main-photo
-            -# = image_tag @item.image
-            %img{src: "/assets/soccer.jpg", width: "135"}
-          -# - if @item.sold?
-          -# .item-sold-out-badge
-          -#   SOLD
+            =image_tag("/assets/soccer.jpg", width: "135")
           %end
           .item-content__sub-photo
-            -# = image_tag @item.image
-            %img{src: "/assets/yohkai.jpg", width: "135"}
+            =image_tag("/assets/yohkai.jpg", width: "135")
           .item-content__sub-photo
-            -# = image_tag @item.image
-            %img{src: "/assets/spider.jpg", width: "135"}
+            =image_tag("/assets/spider.jpg", width: "135")
           .item-content__sub-photo
-            -# = image_tag @item.image
-            %img{src: "/assets/puma.jpg", width: "135"}
+            =image_tag("/assets/puma.jpg", width: "135")
           .item-content__sub-photo
-            -# = image_tag @item.image
-            %img{src: "/assets/soccer.jpg", width: "135"}
+            =image_tag("/assets/soccer.jpg", width: "135")
         %table.item-detail-table
           %tbody
             %tr
@@ -125,79 +116,36 @@
           %span
             あんしん・あんぜんへの取り組み
 
--# .item-detail
--#   .item-detail-message
--#     .message-container
--#       .message-content
--#         %ul.message-items
--#           %li.clearfix
--#             %img{src: '/assets/icon.jpg', class: 'user-image', width: '30'}
--#             = link_to '太郎', class: 'message-user'
--#               -# %figure
--#               -# %div
--#             .message-body
--#               .message-body-text
--#                 どのくらい使用したものでしょうか？
--#               .message-icons
--#                 %span
--#                   8日前
--#           %li.clearfix
--#             %img{src: '/assets/icon.jpg', class: 'user-image', width: '30'}
--#             = link_to '二郎', class: 'message-user'
--#             .message-body
--#               .message-body-text
--#                 サイズは何号でしょうか？
--#               .message-icons
--#                 %span
--#                   8日前
--#           %li.clearfix
--#             %img{src: '/assets/icon.jpg', class: 'user-image', width: '30'}
--#             = link_to '三郎', class: 'message-user'
--#             .message-body
--#               .message-body-text
--#                 素材は革ですか？ゴムですか？
--#               .message-icons
--#                 %span
--#                   8日前
-
 .item-detail
   .l-container
     .comment-box
       .comment-contents
-        %img{src: "/assets/icon.jpg", class: "user-image", width: "30"}
+        =image_tag("/assets/icon.jpg", class: "user-image", width: "30")
         .user-name
           %p
             太郎
         .comment
-          %h2
-            どのくらい使用したものでしょうか？
+          どのくらい使用したものでしょうか？
           .comment-date
-            -# %span.time
-            -#   =fa_icon 'clock'
-            %h2
-              ４日前
+            ４日前
       .comment-contents
-        %img{src: "/assets/icon.jpg", class: "user-image", width: "30"}
+        =image_tag("/assets/icon.jpg", class: "user-image", width: "30")
         .user-name
           %p
-            二郎
+          二郎
         .comment
-          %h2
-            サイズは何号でしょうか？
+          サイズは何号でしょうか？
           .comment-date
-            %h2
-              ３日前
+            ３日前
       .comment-contents
-        %img{src: "/assets/icon.jpg", class: "user-image", width: "30"}
+        =image_tag("/assets/icon.jpg", class: "user-image", width: "30")
         .user-name
           %p
             三郎
         .comment
-          %h2
-            素材は革ですか？ゴムですか？
+          素材は革ですか？ゴムですか？
           .comment-date
-            %h2
-              ２日前
+            ２日前
     .precautionary-note
       %p
         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。    
@@ -220,7 +168,6 @@
     .icon-box
       %i.fa.fa-twitter
     .icon-box
-      -# = fa_icon "line", class: "fa-line"
       %i.fa.fa-line
     .icon-box
       %i.fa.fa-pinterest

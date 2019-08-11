@@ -1,9 +1,6 @@
 .single-container
   .single-header
-    %img{src: "/assets/mercari.jpg", width: "135"}
-    -# %h1
-    -# =link_to root_path do
-    -#   = image_tag("assets/logo.png")
+    =image_tag("/assets/mercari.jpg", width: '135')
   .single-main
     .sell-container
       .sell-container__inner
@@ -38,23 +35,6 @@
                   %span.form-require
                     必須
                 %textarea{name: "url", class: "item-explain", placeholder: "商品の説明（必須1000文字以内）"}
-          -# .sell-content
-          -#   %H3.form-label
-          -#     商品名
-          -#     %span.form-require
-          -#       必須
-          -#   .sell-form-box
-          -#     .form-group-first
-          -#       %input{name: "url", class: "item-name", placeholder: "商品名（必須40文字まで）"}
-                
-          -# .sell-content
-          -#   %H3.form-label
-          -#     商品の説明
-          -#     %span.form-require
-          -#       必須
-          -#   .sell-form-box
-          -#     .form-group-first
-          -#       %textarea{name: "url", class: "item-explain", placeholder: "商品の説明（必須1000文字以内）"}
 
           .sell-content.clearfix
             .sell-content--2
@@ -106,7 +86,7 @@
                 ?
               .sell-form-box
                 .form-group
-                  = f.label :release, "発送元の地域", {class: 'form-label'}
+                  = f.label :release, "配送料の負担", {class: 'form-label'}
                   %span.form-require
                     必須
                   .select-wrap
@@ -121,6 +101,7 @@
                     必須
                   .select-wrap
                     %i.icon-arow-button
+                    -# = f.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, prompt: "--"
                     %select{name: '', class: 'select-default'}
                       %option{:value => "0"}  ---
                       %option{:value => "1"}  北海道
@@ -171,7 +152,7 @@
                       %option{:value => "46"}  鹿児島県
                       %option{:value => "47"}  沖縄県
                 .form-group
-                  = f.label :release, "発送元の地域", {class: 'form-label'}
+                  = f.label :release, "発送までの日数", {class: 'form-label'}
                   %span.form-require
                     必須
                   .select-wrap
@@ -231,25 +212,8 @@
         = link_to '' do
           特定商取引に関する表記
   = link_to '', class: 'single-footer-logo' do
-    %img{src: '/assets/logo-gray.jpg', width: '80'}
+    =image_tag('/assets/logo-gray.jpg', width: '80')
   %p
     %small
       © 2019 Mercari
 
--# .footer-gray
--#   .footer-gray__box
--#     %nav
--#       %ul
--#         %li
--#           = link_to "" do
--#             プライバシーポリシー
--#         %li
--#           = link_to "" do
--#             利用規約
--#         %li
--#           = link_to "" do
--#             特定商取引に関する表記
-
--#     = link_to "", class: "footer-logo" do
--#       %img{src: "/assets/logo-gray.jpg", width: "80"}
--#     %p.footer__copyright © 2019 Mercari

@@ -61,14 +61,6 @@
   padding: 10px;
 }
 
-// .form-group {
-//   margin-top: 40px;
-//   width: 100%;
-//   textarea {
-//     height: 120px;
-//   }
-// }
-
 .input-default {
   width: 586px;
   margin: 8px 0 0;
@@ -133,8 +125,6 @@
 .sell-content {
   border-top: 1px solid rgb(245, 245, 245);
   padding: 40px;
-  // height: 354px;
-  // @include clearfix;
   &--1 {
     height: 315px;
   }
@@ -204,7 +194,6 @@
 
 .l-right {
   float: right;
-  // padding: 8px;
 }
 
 .l-left {

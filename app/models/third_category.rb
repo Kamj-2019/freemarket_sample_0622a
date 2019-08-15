@@ -777,6 +777,4 @@ class ThirdCategory < ActiveHash::Base
   create id: 775, third_category: '店舗用品'
   create id: 776, third_category: 'OA機器'
   create id: 777, third_category: 'ラッピング/包装'
-
-  has_many :categories
 end

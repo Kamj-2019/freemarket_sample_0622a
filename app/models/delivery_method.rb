@@ -9,6 +9,4 @@ class DeliveryMethod < ActiveHash::Base
   create id: 7, delivery_method: 'ゆうパック'
   create id: 8, delivery_method: 'クリックポスト'
   create id: 9, delivery_method: 'ゆうパケット'
-
-  has_many :items
 end

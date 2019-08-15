@@ -138,8 +138,6 @@ class SecondCategory < ActiveHash::Base
   create id: 136, second_category: '文房具/事務用品'
   create id: 137, second_category: '事務/店舗用品'
   create id: 138, second_category: 'その他'
-
-  has_many :categories
 end
 
 

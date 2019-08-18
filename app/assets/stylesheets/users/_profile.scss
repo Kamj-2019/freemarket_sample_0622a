@@ -1,0 +1,61 @@
+.contents--profile {
+  width: 700px;
+  height:100%;
+  margin-left: 40px;
+  padding: 0 0 40px 0;
+  background:#fff;
+  &-title {
+    width: 100%;
+    padding: 10px 0;
+    margin: 0 0 2px 0;
+    text-align: center;
+    background: #fff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &-user {
+    width: 700px;
+    height: 158px;
+    background: image-url("userprofile-bg.jpg") no-repeat;
+    &-inner {
+      position: relative;
+      top: 74px;
+      left: 200px;
+      i {
+        color: #c7c7c7;
+        font-size:60px;
+        background: #e9e6e6;
+        border-radius: 100%;
+      }
+      input {
+        width: 220px;
+        height: 50px;
+        border-radius: 5px;
+        margin: 0 0 0 10px;
+        padding: 0 0 0 15px;
+        position: relative;
+        top: -15px;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+  textarea {
+    position: relative;
+    display: block;
+    width: 668px;
+    min-height:150px;
+    margin: 40px auto 0 auto;
+    padding: 10px;
+    line-height:1.5em;
+  }
+  input[type=submit] {
+    display: block;
+    width: 668px;
+    height: 53px;
+    margin: 15px auto 0 auto;
+    background: #ea352d;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}

@@ -1,6 +1,6 @@
 require 'csv'
 
-csv = CSV.read('db/fixtures/categories.csv')
+csv = CSV.read('db/fixtures/three-categories.csv')
 csv.each do |category|
   first_category_id = category[0]
   second_category_id = category[1]

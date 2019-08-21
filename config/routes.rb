@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit] do
     collection do
       get 'logout'
-      get 'signup'
     end
   end
-  resources :registration do
+  resources :signup do
     collection do
+      get 'step0' # 分岐
       get 'step1' # 会員情報を入力
       get 'step2' # 電話番号認証
       get 'step3' # 住所入力

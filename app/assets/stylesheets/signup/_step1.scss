@@ -1,0 +1,17 @@
+//「会員情報」に対するスタイルシート
+
+@import "modules/variable";
+
+
+.regi-main {
+  width: 700px;
+  margin: 0 auto;
+  &__header {
+    font-size: 15px;
+    padding: 32px;
+    background-color: $bodyBaseWhite;
+  }
+  h2 {
+    text-align: center;
+  }
+}

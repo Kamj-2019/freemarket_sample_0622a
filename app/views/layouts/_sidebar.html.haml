@@ -2,7 +2,7 @@
   %nav
     %ul
       %li
-        = link_to "マイページ", ""
+        = link_to "マイページ", user_path(current_user)
       %li
         = link_to "お知らせ", ""
       %li
@@ -10,7 +10,7 @@
       %li
         = link_to "いいね！一覧", ""
       %li
-        = link_to "出品する", ""
+        = link_to "出品する", new_item_path
       %li
         = link_to "出品した商品 - 出品中", ""
       %li
@@ -38,16 +38,16 @@
     %p 設定
     %ul
       %li
-        = link_to "プロフィール", ""
+        = link_to "プロフィール", profile_user_path(current_user)
       %li
         = link_to "発送元・お届け先住所変更", ""
       %li
-        = link_to "支払い方法", ""
+        = link_to "支払い方法", card_user_path(current_user)
       %li
         = link_to "メール/パスワード", ""
       %li
-        = link_to "本人情報", ""
+        = link_to "本人情報", edit_user_path(current_user)
       %li
         = link_to "電話番号の確認", ""
       %li
-        = link_to "ログアウト", "users/logout"
+        = link_to "ログアウト", "/users/logout"

@@ -149,10 +149,7 @@ button[type=submit] {
   }
 }
 
-
-
 /* first--------------------------------------------------- */
-
 .top__navi--left {
   li {
     .top__navi--left--first {
@@ -194,7 +191,6 @@ button[type=submit] {
 }
 
 /* second-------------------------------------------------- */
-
 .top__navi--left {
   li {
     .top__navi--left--first {
@@ -245,9 +241,7 @@ button[type=submit] {
   }
 }
 
-
 /* third--------------------------------------------------- */
-
 .top__navi--left {
   li {
     .top__navi--left--first {
@@ -310,8 +304,6 @@ button[type=submit] {
 }
 
 /* -------------------------------------------------------- */
-
-
 .top__navi--right {
   padding: 0;
   margin: 0;
@@ -533,6 +525,60 @@ button[type=submit] {
           width:140px;
         }
       }
+    }
+  }
+}
+/* -------------------------------------------------------- */
+.top__navi--sign {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  li {
+    list-style: none;
+    position: relative;
+    a {
+      display: block;
+      height: 50px;
+      line-height: 50px;
+      padding-right: 24px;
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      transition: 0.5s;
+      text-decoration: none;
+    }
+  }
+  li.top__navi--sign-up {
+    a {
+      height:32px;
+      line-height:32px;
+      margin:8px 10px 0 0;
+      padding:0px 10px;
+      background-color: #ea352d;
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  }
+  li.top__navi--sign-in {
+    a {
+      height:32px;
+      line-height:32px;
+      margin:8px 0 0 0;
+      padding:0px 10px;
+      background-color: #fff;
+      border: 1px solid #0099e8;
+      color: #0099e8;
+      font-size: 14px;
+      transition: 0.2s;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0099e8;
+      color: #fff;
     }
   }
 }

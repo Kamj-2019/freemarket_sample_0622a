@@ -1,4 +1,4 @@
-//新規登録のプログレスバーに対するスタイルシート
+//新規登録画面上部のプログレスバーに対するスタイルシート
 
 @import "modules/variable";
 
@@ -34,7 +34,7 @@
     min-width: 40px;
     font-size: 12px;
     color: #888;
-    //.activeだけ赤太字
+    //.activeをhamlで移動し赤太字に変更
     &.active {
       font-weight: 600;
       color: $baseRed;

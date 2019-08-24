@@ -1,0 +1,22 @@
+= render 'layouts/header'
+= render 'layouts/pankuzu'
+.main__double-column
+  = render 'layouts/sidebar'
+
+  .contents--profile
+    %p.contents--profile-title プロフィール
+    = form_for @user, html: { multipart: true } do |f|
+      .contents--profile-user
+        .contents--profile-user-inner
+          = fa_icon "user-circle-o"
+          = f.text_field :nickname
+      %textarea{placeholder: "例） こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+      /カラム名が決まったら差し替える事
+      /= f.text_field :[column-name], placeholder: '例） こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'
+      = f.submit '変更する'
+
+.sellbutton
+  = link_to '' do
+    %p 出品
+    =fa_icon "camera"
+= render 'layouts/footer'

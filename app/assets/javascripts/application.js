@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require dropzone
 
 $(function() {
   $(window).scroll(function() {

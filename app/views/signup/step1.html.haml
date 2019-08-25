@@ -30,22 +30,22 @@
             %label ニックネーム
             %span.required 必須
             %br
-            = f.text_field :nickname, class: "input-default", placeholder: '例) メルカリ太郎'
+            = f.text_field :nickname, class: "input-default", placeholder: '例) メルカリ太郎', required: "true"
           .form-group
             %label メールアドレス
             %span.required 必須
             %br
-            = f.email_field :email, class: "input-default", placeholder: 'PC・携帯どちらでも可'
+            = f.email_field :email, class: "input-default", placeholder: 'PC・携帯どちらでも可', required: "true"
           .form-group
             %label パスワード
             %span.required 必須
             %br
-            = f.password_field :password, class: "input-default", placeholder: '8文字以上'
+            = f.password_field :password, class: "input-default", placeholder: '8文字以上', required: "true"
           .form-group
             %label パスワード（確認）
             %span.required 必須
             %br
-            = f.password_field :password_confirmation, class: "input-default", placeholder: '8文字以上'
+            = f.password_field :password_confirmation, class: "input-default", placeholder: '8文字以上', required: "true"
           .form-group
             %h3 本人確認
             %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
@@ -54,22 +54,22 @@
             %span.required 必須
             %br
             %li
-              = c.text_field :first_name, class: "input-default input-half", placeholder: "例)山田"
-              = c.text_field :family_name, class: "input-default input-half", placeholder: "例)彩"
+              = c.text_field :first_name, class: "input-default input-half", placeholder: "例)山田", required: "true"
+              = c.text_field :family_name, class: "input-default input-half", placeholder: "例)彩", required: "true"
           .form-group
             %label お名前カナ（全角）
             %span.required 必須
             %br
             %li
-              = c.text_field :kana_first_name, class: "input-default input-half", placeholder: "例)ヤマダ"
-              = c.text_field :kana_family_name, class: "input-default input-half", placeholder: "例)アヤ"
+              = c.text_field :kana_first_name, class: "input-default input-half", placeholder: "例)ヤマダ", required: "true"
+              = c.text_field :kana_family_name, class: "input-default input-half", placeholder: "例)アヤ", required: "true"
           .form-group
             %label 生年月日
             %span.required 必須
             %br
             .birthday-select-wrap
               .select-wrap
-                %select.select-wrap__default{name: "year", style: "font-size: 12px;"}
+                %select.select-wrap__default{name: "year", style: "font-size: 12px;", required: "true"}
                   %option{value: ""} --
                   %option{value: "2000"} 2000
                   %option{value: "1999"} 1999
@@ -95,7 +95,7 @@
                 %i.fas.fa-angle-down
               %span 年
               .select-wrap.select-wrap__month
-                %select.select-wrap__default{name: "month", style: "font-size: 12px;"}
+                %select.select-wrap__default{name: "month", style: "font-size: 12px;", required: "true"}
                   %option{value: ""} --
                   %option{value: "1"} 1
                   %option{value: "2"} 2
@@ -112,7 +112,7 @@
                 %i.fas.fa-angle-down
               %span 月
               .select-wrap.select-wrap__day
-                %select.select-wrap__default{name: "day", style: "font-size: 12px;"}
+                %select.select-wrap__default{name: "day", style: "font-size: 12px;", required: "true"}
                   %option{value: ""} --
                   %option{value: "1"} 1
                   %option{value: "2"} 2

@@ -23,7 +23,7 @@
     label {
       font-weight: 600;
     }
-    span.required {
+    .required {
       background-color: $baseRed;
       margin: 0 0 0 8px;
       padding: 2px 4px;
@@ -32,6 +32,16 @@
       font-size: 12px;
       vertical-align: top;
     }
+    .elective {
+      background-color: $boxShadow;
+      color: $bodyBaseWhite;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      font-size: 12px;
+      vertical-align: top;
+    }
+
     .input-default {
       width: 100%;
       margin: 8px 0 0;
@@ -110,4 +120,12 @@
     font-size: 14px;
     color: $aTagColor;
   }
+}
+
+.prefecture-box {
+  width: 100%;
+  height: 45px;
+  color: #888;
+  background-color: $bodyBaseWhite;
+  border: 1px solid $boxShadow;
 }

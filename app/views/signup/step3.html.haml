@@ -27,3 +27,36 @@
       = form_for @user, url: step4_signup_index_path, method: :get do |f|
         = fields_for @user_detail, url: step4_signup_index_path, method: :get do |c|        
           .form-group
+            %label 郵便番号
+            %span.required 必須
+            %br
+            = c.text_field :postalcode, class: "input-default", placeholder: '例) 123-4567', required: "true"
+          .form-group
+            %label 都道府県
+            %span.required 必須
+            %br
+            = c.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, {prompt: "--"}, {class: "prefecture-box"}
+          .form-group
+            %label 市区町村
+            %span.required 必須
+            %br
+            = c.text_field :city, class: "input-default", placeholder: '例) 横浜市緑区', required: "true"
+          .form-group
+            %label 番地
+            %span.required 必須
+            %br
+            = c.text_field :address, class: "input-default", placeholder: '例) 永田町1-1-1', required: "true"
+          .form-group
+            %label 建物名
+            %span.elective 任意
+            %br
+            = c.text_field :address, class: "input-default", placeholder: '例) 桃山ビル18階'
+          .form-group
+            %label 電話
+            %span.elective 任意
+            %br
+            = c.text_field :address, class: "input-default", placeholder: '例) 0901234567'
+          .form-group
+            = f.submit "次へ進む", class: 'btn'
+= render 'layouts/login_footer'
+

@@ -29,6 +29,11 @@ class SignupController < ApplicationController
     @user_detail = UserDetail.new
   end
 
+  def step4
+    @user = User.new
+    @user_detail = UserDetail.new
+  end
+
 
   # private
 

@@ -1,5 +1,6 @@
 class Status < ActiveHash::Base
   field :status
+  create id: 0, status: '---'
   create id: 1, status: '新品、未使用'
   create id: 2, status: '未使用に近い'
   create id: 3, status: '目立った傷や汚れなし'

@@ -17,7 +17,6 @@ class ItemsController < ApplicationController
   end
 
   def create # 商品出品完了
-    # binding.pry
     @item = Item.new(item_params)
     @item.user_id = current_user.id
     if @item.save

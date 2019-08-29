@@ -1,5 +1,6 @@
 class DeliveryMethod < ActiveHash::Base
   field :delivery_method
+  create id: 0, delivery_method: '---'
   create id: 1, delivery_method: '未定'
   create id: 2, delivery_method: 'らくらくメルカリ便'
   create id: 3, delivery_method: 'ゆうメール'

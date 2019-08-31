@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def category # カテゴリー一覧表示
-    @items = Item.all.where(category_id: params[:id])
+    @items = Item.all
   end
 
   def brand # ブランド一覧表示
@@ -43,6 +43,8 @@ class ItemsController < ApplicationController
 
   def show # 商品詳細表示
     @item = Item.find(params[:id])
+    @allitems = Item.all.order('id DESC')
+    @images = ItemImage.all
   end
 
   def edit # 商品情報編集

@@ -1,6 +1,6 @@
 .login-page
   = link_to class: 'login-page__top' do
-    =image_tag "logo-gray.png", class: "login-page__logo"
+    =image_tag("logo-gray.png", class: "login-page__logo")
 
   .login-page__main
     .login-page__box
@@ -29,7 +29,7 @@
 
           //reCAPTCHA導入予定
           .form-box
-            %img{:src => "recaptcha.png", class:"recaptcha-image"}/
+            =image_tag('recaptcha.png', class:"recaptcha-image")
           .actions
             = f.submit "ログイン", class: 'btn'
 

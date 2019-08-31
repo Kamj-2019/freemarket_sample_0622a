@@ -1,103 +1,89 @@
 = render "layouts/header"
-
-%nav.brand-crumbs
-  %ul
-    %li
-      メルカリ
-    %li
-      >
-    %li
-      %span
-        商品のジャンル
-
+= render 'layouts/pankuzu'
 .item-detail
   .l-container
     .l-content
       .l-content__container
         %h2.item-detail-name
-          サッカーボール
-        .saler-box
-        %end
+          = @item.item_title
         .item-content
           .item-content__main-photo
-            =image_tag("/assets/soccer.jpg")
-          %end
-          .item-content__sub-photo
-            =image_tag("/assets/yohkai.jpg")
-          .item-content__sub-photo
-            =image_tag("/assets/spider.jpg")
-          .item-content__sub-photo
-            =image_tag("/assets/puma.jpg")
-          .item-content__sub-photo
-            =image_tag("/assets/soccer.jpg")
+            = image_tag(@item.item_images[0].image_url, width: '135', alt: '商品画像')
+          - @item.item_images.each_with_index do |image, i|
+            - if i > 0 and i < 4
+              .item-content__sub-photo
+                =image_tag(image.image_url, alt: '商品画像')
         %table.item-detail-table
           %tbody
             %tr
               %th
                 出品者
               %td
-                = link_to "#", ""
+                = link_to "", class: 'item-detail-table__link' do
+                  = @item.user.nickname
                 .item-user-rating
-                  %i.icon-good
-                .item-user-rating
-                  %i.icon-normal
-                .item-user-rating
-                  %i.icon-bad
+                  =fa_icon "smile-o"
+                  38
+                  =fa_icon "meh-o"
+                  11
+                  =fa_icon "frown-o"
+                  3
             %tr
               %th
                 カテゴリー
               %td
-                = link_to "第一カテゴリー", "#"
-                <br>
-                = link_to ">第二カテゴリー", "#"
-                <br>
-                = link_to ">第三カテゴリー", "#"
+                = link_to @item.category.first_category[:first_category], category_item_path(@item.category.first_category_id), class: 'item-detail-table__link'
+                %br
+                = link_to @item.category.second_category[:second_category], category_item_path(@item.category.second_category_id), class: 'item-detail-table__link'
+                %br
+                = link_to @item.category.third_category[:third_category], category_item_path(@item.category.third_category_id), class: 'item-detail-table__link'
             %tr
               %th
                 ブランド
               %td
-                = link_to "ナイキ", "#"
+                - unless @item.brand.nil?
+                  = link_to @item.brand.brand, brand_item_path(@item.brand_id), class: 'item-detail-table__link'
             %tr
               %th
                 商品の状態
               %td
-                新品
+                = @item.status.status
             %tr
               %th
                 配送料の負担
               %td
-                着払い（購入者負担）
+                = @item.delivery_fee_payer.delivery_fee_payer
             %tr
               %th
                 配送の方法
               %td
-                未定
+                = @item.delivery_method.delivery_method
             %tr
               %th
                 配送元地域
               %td
-                = link_to "東京都", "#"
+                = link_to @item.prefecture.prefecture, "", class: 'item-detail-table__link'
             %tr
               %th
                 配送の目安
               %td
-                1~2日で発送
-
-
+                = @item.shipping_day.shipping_day
       .item-detail-price
         %span.item-detail-price__bold
-          ¥1,000
+          = number_to_currency(@item.price, unit: "￥", precision: 0)
         %span.item-detail-price__tax
           （税込）
         %span.item-detail-price__shipping-fee
-          着払い
-      .item-buy-btn__gray
-        売り切れました
-
+          = "#{@item.delivery_fee_payer.delivery_fee_payer}".sub(/\(.*/, '')
+      - if @allitems
+        .item-buy-btn__gray
+          購入画面に進む
+      -else
+        .item-buy-btn__gray
+          売り切れました
       .item-description
         %p
           非常に良い状態です。
-
       .item-button-container
         .item-button-left
           %button.item-button.item-button-like
@@ -120,7 +106,7 @@
   .l-container
     .comment-box
       .comment-contents
-        =image_tag("/assets/icon.jpg", class: "user-image")
+        =image_tag("icon.jpg", class: "user-image")
         .user-name
           %p
             太郎
@@ -129,7 +115,7 @@
           .comment-date
             ４日前
       .comment-contents
-        =image_tag("/assets/icon.jpg", class: "user-image")
+        =image_tag("icon.jpg", class: "user-image")
         .user-name
           %p
           二郎
@@ -138,7 +124,7 @@
           .comment-date
             ３日前
       .comment-contents
-        =image_tag("/assets/icon.jpg", class: "user-image")
+        =image_tag("icon.jpg", class: "user-image")
         .user-name
           %p
             三郎
@@ -175,71 +161,72 @@
 .other-items
   .other-item
     %h2
-      出品者のその他の出品
-
+      = "#{@item.user.nickname}さんのその他の出品"
 .items-box-content
   %section
-    %h2
-    .contents__items
-      = link_to '', class: 'contents__items-frame' do
-        = image_tag("abe.jpg", alt: '商品画像')
-        %div
-          %div 安倍さん
-          %span.price ¥100
-          %span.likes
-            =fa_icon "heart-o"
-            1
-      = link_to '', class: 'contents__items-frame' do
-        = image_tag("noda.jpg", alt: '商品画像')
-        %div
-          %div 野田さん
-          %span.price ¥1,000
-          %span.likes
-            =fa_icon "heart-o"
-            10
-      = link_to '', class: 'contents__items-frame' do
-        = image_tag("kan.jpg", alt: '商品画像')
-        %div
-          %div 菅さん
-          %span.price ¥10,000
-          %span.likes
-            =fa_icon "heart-o"
-            100
+    .contents__items 
+      - @allitems.where(user_id: @item.user).each_with_index do |item, i|
+        - if 0 <= i and i <= 2
+          = link_to item_path(item.id), class: 'contents__items-frame' do
+            = image_tag(item.item_images[0].image_url, alt: '商品画像')
+            %div
+              %div
+                = item.item_title
+              %span.price
+                = number_to_currency(item.price, unit: "￥", precision: 0)
+              %span.likes
+                =fa_icon "heart-o"
+                12
+    .contents__items 
+      - @allitems.where(user_id: @item.user).each_with_index do |item, i|
+        - if 3 <= i and i <= 5
+          = link_to item_path(item.id), class: 'contents__items-frame' do
+            = image_tag(item.item_images[0].image_url, alt: '商品画像')
+            %div
+              %div
+                = item.item_title
+              %span.price
+                = number_to_currency(item.price, unit: "￥", precision: 0)
+              %span.likes
+                =fa_icon "heart-o"
+                12
 
 .other-items
   .other-item
     %h2
-      サッカーボール その他の出品
-
+      - if @item.brand.nil?
+        = "#{@item.category.third_category[:third_category]} その他の商品"
+      - else
+        = "#{@item.brand.brand}の#{@item.category.third_category[:third_category]} その他の商品"
 .items-box-content
   %section
-    %h2
-    .contents__items
-      = link_to '', class: 'contents__items-frame' do
-        = image_tag("abe.jpg", alt: '商品画像')
-        %div
-          %div 安倍さん
-          %span.price ¥100,000
-          %span.likes
-            =fa_icon "heart-o"
-            100
-      = link_to '', class: 'contents__items-frame' do
-        = image_tag("noda.jpg", alt: '商品画像')
-        %div
-          %div 野田さん
-          %span.price ¥1,000
-          %span.likes
-            =fa_icon "heart-o"
-            10
-      = link_to '', class: 'contents__items-frame' do
-        = image_tag("kan.jpg", alt: '商品画像')
-        %div
-          %div 菅さん
-          %span.price ¥100
-          %span.likes
-            =fa_icon "heart-o"
-            1
-
+    .contents__items 
+      - if @item.brand.nil?
+        - @allitems.where(category_id: @item.category_id).each_with_index do |item, i|
+          - if 0 <= i and i <= 2
+            = link_to item_path(item.id), class: 'contents__items-frame' do
+              = image_tag(item.item_images[0].image_url, alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price
+                  = number_to_currency(item.price, unit: "￥", precision: 0)
+                %span.likes
+                  =fa_icon "heart-o"
+                  100
+      - else
+        - @allitems.where(brand_id: @item.brand_id).where(category_id: @item.category_id).each_with_index do |item, i|
+          - if 1 <= i and i <= 3
+            = link_to item_path(item.id), class: 'contents__items-frame' do
+              = image_tag(item.item_images[0].image_url, alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price
+                  = number_to_currency(item.price, unit: "￥", precision: 0)
+                %span.likes
+                  =fa_icon "heart-o"
+                  100
 .main-visual
 
 = render "layouts/footer"

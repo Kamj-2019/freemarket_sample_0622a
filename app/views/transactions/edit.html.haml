@@ -1,0 +1,60 @@
+.purchase
+  %header
+    = link_to image_tag("logo.svg", alt: 'ロゴマーク'), root_path
+  .main
+    .main__inner
+      %h1
+        購入内容の確認
+      .main__inner__item
+        = image_tag(@item.item_images[0].image_url, alt: '商品画像')
+        %p
+          = @item.item_title
+      .main__inner__price
+        %span
+          = number_to_currency(@item.price, unit: "￥", precision: 0)
+        %span
+          = "#{@item.delivery_fee_payer.delivery_fee_payer}".sub(/\(.*/, '')
+      %p.main__inner__point
+        ポイントはありません
+      .main__inner__amount
+        %span
+          支払い金額
+        %span
+          = number_to_currency(@item.price, unit: "￥", precision: 0)
+      %p.main__inner__app-only
+        この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+      = link_to '購入する', "", class: 'main__inner__buy'
+      %p.main__inner__app-install
+        アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+      %p.main__inner__buyer
+        配送先
+      %ul.main__inner__buyer-address
+        %li
+          〒103-0001
+        %li
+          東京都中央区日本橋蛎殻町
+        %li
+          加賀恭一郎
+      %p.main__inner__change
+        = link_to '変更する', ""
+      %p.main__inner__buyer
+        支払い方法
+      .main__inner__buyer-payment
+        %p
+          ************9876
+        %p
+          01/20
+        = image_tag('', width: '26', height: '22', alt: 'クレジットカード')
+        %p.main__inner__change
+          = link_to '変更する', ""
+  %footer
+    %ul
+      %li
+        プライバシーポリシー
+      %li
+        利用規約
+      %li
+        特定商取引に関する表記
+    = link_to image_tag("logo-gray.jpg", alt: 'ロゴマーク'), root_path ,class: 'footer__logo'
+    %p
+      © 2019 freemarket

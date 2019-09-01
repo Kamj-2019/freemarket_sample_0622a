@@ -25,7 +25,7 @@
       %h2 住所入力
     .regi-main__form
       = form_for @user, url: step4_signup_index_path, method: :get do |f|
-        = fields_for @user_detail, url: step4_signup_index_path, method: :get do |c|        
+        = f.fields_for :user_detail, @user.build_user_detail, url: step3_signup_index_path, method: :get do |c|
           .form-group
             %label 郵便番号
             %span.required 必須
@@ -50,13 +50,12 @@
             %label 建物名
             %span.elective 任意
             %br
-            = c.text_field :address, class: "input-default", placeholder: '例) 桃山ビル18階'
+            = c.text_field :building, class: "input-default", placeholder: '例) 桃山ビル18階'
           .form-group
             %label 電話
             %span.elective 任意
             %br
-            = c.text_field :address, class: "input-default", placeholder: '例) 0901234567'
+            = c.text_field :phone_number, class: "input-default", placeholder: '例) 0901234567'
           .form-group
             = f.submit "次へ進む", class: 'btn'
-= render 'layouts/login_footer'
-
+  = render 'layouts/login_footer'

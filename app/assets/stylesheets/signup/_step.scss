@@ -138,3 +138,24 @@
   border: 1px solid $boxShadow;
 
 }
+
+.text-done {
+  text-align: center;
+  p {
+    font-size: 18px;
+  }
+}
+
+.regi-main__form__errors {
+  h2 {
+    font-size: 18px;
+    color: $baseRed;
+  }
+  ul {
+    text-align: center;
+    font-size: 14px;
+    li {
+      display: inline-block;
+    }
+  }
+}

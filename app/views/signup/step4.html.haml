@@ -25,14 +25,14 @@
       %h2 支払い方法
     .regi-main__form
       -# cardsテーブル未作成のため、仮で作成
-      = form_for @user, url: done_signup_index_path, method: :get do |f|
-        = fields_for @user_detail, url: done_signup_index_path, method: :get do |c|
+      = form_for @user, url: signup_index_path, method: :post do |f|
+        = f.fields_for :user_detail, @user.build_user_detail, url: signup_index_path, method: :post do |c|
           .form-group
             %label カード番号
             %span.required 必須
             %br
-            -# cardsテーブル未作成のため、仮でuserで記入
-            = c.text_field :user, class: "input-default", placeholder: '半角数字のみ', required: "true"
+            -# cardsテーブル未作成のため、仮でuserで記入,required: "true"も解除
+            = f.text_field :nickname, class: "input-default", placeholder: '半角数字のみ'
           .form-group
             %label 有効期限
             %span.required 必須
@@ -70,7 +70,7 @@
             %span.required 必須
             %br
             -# cardsテーブル未作成のため、仮でuserで記入
-            = c.text_field :user, class: "input-default", placeholder: 'カード背面4桁もしくは3桁の番号', required: "true"
+            = f.text_field :nickname, class: "input-default", placeholder: 'カード背面4桁もしくは3桁の番号'
             %p.text-right
               = link_to "カード裏面の番号とは？", "https://www.google.com/"
           .form-group

@@ -25,7 +25,7 @@
       %h2 電話番号の確認
     .regi-main__form
       = form_for @user, url: step3_signup_index_path, method: :get do |f|
-        = fields_for @user_detail, url: step3_signup_index_path, method: :get do |c|        
+        = f.fields_for :user_detail, @user.build_user_detail, url: step3_signup_index_path, method: :get do |c|
           .form-group
             %label 携帯電話の番号
             %br

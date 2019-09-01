@@ -1,5 +1,6 @@
 class Size < ActiveHash::Base
   field :size
+  create id: 0, size: '---'
   create id: 1, size: 'S'
   create id: 2, size: 'M'
   create id: 3, size: 'L'

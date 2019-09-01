@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190809082943) do
+ActiveRecord::Schema.define(version: 20190831092322) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "prefecture_id"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20190809082943) do
     t.text     "item_title",            limit: 65535, null: false
     t.text     "description",           limit: 65535, null: false
     t.integer  "category_id",                         null: false
-    t.integer  "size_id",                             null: false
-    t.integer  "brand_id",                            null: false
+    t.integer  "size_id"
+    t.integer  "brand_id"
     t.integer  "status_id",                           null: false
     t.integer  "delivery_fee_payer_id",               null: false
     t.integer  "delivery_method_id",                  null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20190809082943) do
     t.integer  "user_id",                             null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "aasm_state"
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["delivery_fee_payer_id"], name: "index_items_on_delivery_fee_payer_id", using: :btree

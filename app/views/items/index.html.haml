@@ -2,91 +2,164 @@
 .main__visual
 .main__single-column
   .content
-    / コンテンツ
-    = link_to "新規登録", signup_users_path
-    = link_to "ログイン", new_user_session_path
     %section
       %h1 ピックアップカテゴリー
       %h2
-        = link_to 'レディース新着アイテム', href: ''
+        = link_to "#{@category1.first_category}新着アイテム", category_item_path(1)
       .contents__items
-        = link_to '', class: 'contents__items-frame' do
-          = image_tag("testimage.jpg", alt: '商品画像')
-          %div
-            %div 商品名商品名商品名商品名商品名
-            %span.price ¥100,000
-            %span.likes
-              =fa_icon "heart-o"
-              139
-        = link_to '', class: 'contents__items-frame' do
-          = image_tag("testimage.jpg", alt: '商品画像')
-          %div
-            %div 商品名商品名商品名商品名商品名
-            %span.price ¥100,000
-            %span.likes
-              =fa_icon "heart-o"
-              139
-        = link_to '', class: 'contents__items-frame' do
-          = image_tag("testimage.jpg", alt: '商品画像')
-          %div
-            %div 商品名商品名商品名商品名商品名
-            %span.price ¥100,000
-            %span.likes
-              =fa_icon "heart-o"
-              139
-        = link_to '', class: 'contents__items-frame' do
-          = image_tag("testimage.jpg", alt: '商品画像')
-          %div
-            %div 商品名商品名商品名商品名商品名
-            %span.price ¥100,000
-            %span.likes
-              =fa_icon "heart-o"
-              139
+        - @items1.first(4).each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
+            = image_tag(item.item_images[0].image_url, alt: '商品画像')
+            %div
+              %div
+                = item.item_title
+              %span.price 
+                ¥
+                = item.price
+              %span.likes
+                100
       .contents__all-items
         = link_to 'すべての商品を見る', ''
+
+      %h2
+        = link_to "#{@category2.first_category}新着アイテム", category_item_path(2)
+      .contents__items
+        - @items2.first(4).each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
+            = image_tag(item.item_images[0].image_url, width: '135', alt: '商品画像')
+            %div
+              %div
+                = item.item_title
+              %span.price 
+                ¥
+                = item.price
+              %span.likes
+                =fa_icon "heart-o"
+                135
+      .contents__all-items
+        = link_to 'すべての商品を見る', ''
+
+      %h2
+        = link_to "#{@category3.first_category}新着アイテム", category_item_path(3)
+      .contents__items
+        - @items3.first(4).each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
+            = image_tag(item.item_images[0].image_url, width: '135', alt: '商品画像')
+            %div
+              %div
+                = item.item_title
+              %span.price 
+                ¥
+                = item.price
+              %span.likes
+                =fa_icon "heart-o"
+                135
+      .contents__all-items
+        = link_to 'すべての商品を見る', ''
+
+      %h2
+        = link_to "#{@category4.first_category}新着アイテム", category_item_path(6)
+      .contents__items
+        - @items4.first(4).each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
+            = image_tag(item.item_images[0].image_url, width: '135', alt: '商品画像')
+            %div
+              %div
+                = item.item_title
+              %span.price 
+                ¥
+                = item.price
+              %span.likes
+                =fa_icon "heart-o"
+                135
+      .contents__all-items
+        = link_to 'すべての商品を見る', ''
+
     %section
       %h1.pickupbrand ピックアップブランド
       %h2
-        = link_to 'シャネル新着アイテム', ''
+        = link_to href: '', alt: 'シャネル' do
+          = "#{@brand1.brand} 新着アイテム"
       .contents__items
-        = link_to '', class: 'contents__items-frame' do
-          = image_tag("testimage.jpg", alt: '商品画像')
-          %div
-            %div 商品名商品名商品名商品名商品名
-            %span.price ¥100,000
-            %span.likes
-              =fa_icon "heart-o"
-              139
-        = link_to '', class: 'contents__items-frame' do
-          = image_tag("testimage.jpg", alt: '商品画像')
-          %div
-            %div 商品名商品名商品名商品名商品名
-            %span.price ¥100,000
-            %span.likes
-              =fa_icon "heart-o"
-              139
-        = link_to '', class: 'contents__items-frame' do
-          = image_tag("testimage.jpg", alt: '商品画像')
-          %div
-            %div 商品名商品名商品名商品名商品名
-            %span.price ¥100,000
-            %span.likes
-              =fa_icon "heart-o"
-              139
-        = link_to '', class: 'contents__items-frame' do
-          = image_tag("testimage.jpg", alt: '商品画像')
-          %div
-            %div 商品名商品名商品名商品名商品名
-            %span.price ¥100,000
-            %span.likes
-              =fa_icon "heart-o"
-              139
+        -@items.where(brand_id: 49).first(4).each do |item|
+          = link_to 'item_path', class: 'contents__items-frame' do
+            - item.item_images.first(1).each do |image|
+              = image_tag(image.image_url, alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price 
+                  ¥
+                  = item.price
+                %span.likes
+                  =fa_icon "heart-o"
+                  135
+      .contents__all-items
+        = link_to 'すべての商品をみる'
+
+      %h2
+        = link_to href: '', alt: 'シャネル' do
+          = "#{@brand2.brand} 新着アイテム"
+      .contents__items
+        -@items.where(brand_id: 50).first(4).each do |item|
+          = link_to 'item_path', class: 'contents__items-frame' do
+            - item.item_images.first(1).each do |image|
+              = image_tag(image.image_url, alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price 
+                  ¥
+                  = item.price
+                %span.likes
+                  =fa_icon "heart-o"
+                  135
+      .contents__all-items
+        = link_to 'すべての商品をみる'
+
+      %h2
+        = link_to href: '', alt: 'シャネル' do
+          = "#{@brand3.brand} 新着アイテム"
+      .contents__items
+        -@items.where(brand_id: 52).first(4).each do |item|
+          = link_to 'item_path', class: 'contents__items-frame' do
+            - item.item_images.first(1).each do |image|
+              = image_tag(image.image_url, alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price 
+                  ¥
+                  = item.price
+                %span.likes
+                  =fa_icon "heart-o"
+                  135
+      .contents__all-items
+        = link_to 'すべての商品をみる'
+        
+      %h2
+        = link_to href: '', alt: 'シャネル' do
+          = "#{@brand4.brand} 新着アイテム"
+      .contents__items
+        -@items.where(brand_id: 51).first(4).each do |item|
+          = link_to 'item_path', class: 'contents__items-frame' do
+            - item.item_images.first(1).each do |image|
+              = image_tag(image.image_url, alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price 
+                  ¥
+                  = item.price
+                %span.likes
+                  =fa_icon "heart-o"
+                  135
       .contents__all-items
         = link_to 'すべての商品をみる'
 
 .main__foot-visual 
 .sellbutton
-  = link_to '' do
+  = link_to new_item_path do
     %p 出品
     =fa_icon "camera"
 = render 'layouts/footer'

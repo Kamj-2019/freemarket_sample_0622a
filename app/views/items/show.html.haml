@@ -75,16 +75,15 @@
           （税込）
         %span.item-detail-price__shipping-fee
           = "#{@item.delivery_fee_payer.delivery_fee_payer}".sub(/\(.*/, '')
-      .item-buy-btn
-        - if @item.aasm_state == nil || @item.aasm_state == 'waiting'
-          .item-buy-btn__red
-            = link_to '購入画面に進む', edit_transaction_path(@item.id)
-        -else
-          .item-buy-btn__gray
-            売り切れました
+      - if @allitems
+        .item-buy-btn__gray
+          購入画面に進む
+      -else
+        .item-buy-btn__gray
+          売り切れました
       .item-description
         %p
-          = @item.description
+          非常に良い状態です。
       .item-button-container
         .item-button-left
           %button.item-button.item-button-like

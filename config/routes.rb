@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     collection do
       get 'logout'
     end
+    member do
+      get 'profile' # プロフィール
+      get 'card' # 支払い方法
+    end
   end
   resources :signup do
     collection do
@@ -24,10 +28,6 @@ Rails.application.routes.draw do
       get 'address' # 住所入力
       get 'card' # 支払い方法
       get 'done' # 完了画面
-    end
-    member do
-      get 'profile' # プロフィール
-      get 'card' # 支払い方法
     end
   end
 end

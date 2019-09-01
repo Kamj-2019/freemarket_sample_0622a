@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'brand' # ブランド一覧表示
     end
   end
-
+  resources :transactions, only: [:edit, :update]
   resources :users, only: [:index, :show, :edit, :update] do
     collection do
       get 'logout'

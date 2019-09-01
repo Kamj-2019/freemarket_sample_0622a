@@ -237,16 +237,25 @@
   }
 }
 
-.item-buy-btn__gray {
+.item-buy-btn {
   width: 620px;
-  height: 56px;
+  height: 60px;
+  line-height: 60px;
   margin: 0 auto;
   text-align: center;
-  font-weight: 600;
-  line-height: 56px;
-  font-size: 24px;
-  background-color: gray;
+  font-weight: bold;
+  font-size: 26px;
   color: #fff;
+  &__gray {
+    background-color: gray;
+  }
+  &__red {
+    a {
+      display: block;
+      background: #ea352d;
+      color: #fff;
+    }
+  }
 }
 
 .item-description {

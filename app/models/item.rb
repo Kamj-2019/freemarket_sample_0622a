@@ -1,4 +1,25 @@
 class Item < ApplicationRecord
+  include AASM
+
+  aasm do
+    # 状態の定義
+    state :waiting, :initial => true
+    state :wip, :done
+
+    # イベントの定義
+    event :run do
+      # 遷移の定義
+      transitions :from => :waiting, :to => :wip
+    end
+
+    event :finish do
+      transitions :from => :wip, :to => :done
+    end
+
+    event :wait do
+      transitions :from => [:wip, :done], :to => :waiting
+    end
+  end
   extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :item_images
   belongs_to :user

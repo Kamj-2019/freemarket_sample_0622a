@@ -1,5 +1,6 @@
 class FirstCategory < ActiveHash::Base
   field :first_category
+  create id: 0, first_category: '---'
   create id: 1, first_category: 'レディース'
   create id: 2, first_category: 'メンズ'
   create id: 3, first_category: 'ベビー・キッズ'

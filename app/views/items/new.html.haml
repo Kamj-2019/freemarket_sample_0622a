@@ -1,6 +1,7 @@
 .single-container
   .single-header
-    =image_tag("/assets/mercari.jpg")
+    =link_to root_path do
+      =image_tag("mercari.jpg")
   .single-main
     .sell-container
       .sell-container__inner
@@ -28,13 +29,13 @@
                   %span.form-require
                     必須
                 %div
-                  %input{name: 'url', class: 'item-name', placeholder: '商品名（必須40文字まで）'}
+                  %input{name: 'item_title', class: 'item-name', placeholder: '商品名（必須40文字まで）'}
               .form-group
                 .form-label
                   商品の説明
                   %span.form-require
                     必須
-                %textarea{name: "url", class: "item-explain", placeholder: "商品の説明（必須1000文字以内）"}
+                %textarea{name: "description", class: "item-description", placeholder: "商品の説明（必須1000文字以内）"}
 
           .sell-content.clearfix
             .sell-content--2
@@ -48,7 +49,7 @@
                   %div
                     .select-wrap
                       %i.icon-arrow-button
-                      %select{name: '', class: 'select-default'}
+                      %select{name: "category_id", class: 'select-default'}
                         %option{:value => "0"}  ---
                         %option{:value => "1"}  レディース
                         %option{:value => "2"}  メンズ
@@ -64,12 +65,42 @@
                         %option{:value => "12"}  自動車・オートバイ
                         %option{:value => "13"}  その他
                 .form-group
+                  = f.label :state, 'サイズ', {class: 'form-label'}
+                  %span.form-require
+                    必須
+                  %div
+                    .select-wrap
+                      %i.icon-arrow-button
+                      %select{name: "size", class: 'select-default'}
+                        %option{:value => "0"}  ---
+                        %option{:value => "1"}  S
+                        %option{:value => "2"}  M
+                        %option{:value => "3"}  L
+                        %option{:value => "4"}  25
+                        %option{:value => "5"}  26
+                        %option{:value => "6"}  27
+                .form-group
+                  = f.label :state, 'ブランド', {class: 'form-label'}
+                  %span.form-require
+                    必須
+                  %div
+                    .select-wrap
+                      %i.icon-arrow-button
+                      %select{name: "brand", class: 'select-default'}
+                        %option{:value => "0"}  ---
+                        %option{:value => "1"}  A
+                        %option{:value => "2"}  B
+                        %option{:value => "3"}  C
+                        %option{:value => "4"}  D
+                        %option{:value => "5"}  E
+                        %option{:value => "6"}  F
+                .form-group
                   = f.label :state, '商品の状態', {class: 'form-label'}
                   %span.form-require
                     必須
                   .select-wrap
                     %i.icon-arrow-button
-                    %select{name: '', class: 'select-default'}
+                    %select{name: 'status', class: 'select-default'}
                       %option{:value => "0"}  ---
                       %option{:value => "1"}  新品、未使用
                       %option{:value => "2"}  未使用に近い
@@ -91,7 +122,7 @@
                     必須
                   .select-wrap
                     %i.icon-arow-button
-                    %select{name: '', class: 'select-default'}
+                    %select{name: 'delivery_fee_payer', class: 'select-default'}
                       %option{:value => "0"}  ---
                       %option{:value => "1"}  送料込み（出品者負担）
                       %option{:value => "2"}  着払い（購入者負担）
@@ -101,8 +132,7 @@
                     必須
                   .select-wrap
                     %i.icon-arow-button
-                    -# = f.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, prompt: "--"
-                    %select{name: '', class: 'select-default'}
+                    %select{name: 'prefecture', class: 'select-default'}
                       %option{:value => "0"}  ---
                       %option{:value => "1"}  北海道
                       %option{:value => "2"}  青森県
@@ -157,11 +187,22 @@
                     必須
                   .select-wrap
                     %i.icon-arow-button
-                    %select{name: '', class: 'select-default'}
+                    %select{name: 'shipping_day', class: 'select-default'}
                       %option{:value => "0"}  --
                       %option{:value => "1"}  1~2日で発送
                       %option{:value => "2"}  2~3日で発送
                       %option{:value => "3"}  4~7日で発送
+                .form-group
+                  = f.label :release, "発送方法", {class: 'form-label'}
+                  %span.form-require
+                    必須
+                  .select-wrap
+                    %i.icon-arow-button
+                    %select{name: 'delivery_method', class: 'select-default'}
+                      %option{:value => "0"}  --
+                      %option{:value => "1"}  ゆうパック
+                      %option{:value => "2"}  らくらくメルカリ便
+                      %option{:value => "3"}  手渡し
 
           .sell-content
             .sell-content--4
@@ -177,8 +218,7 @@
                       %span.form-require
                         必須
                     .l-right.sell-price-input
-                      -# ¥
-                      %input{name: "url",class: 'input-default-second', placeholder: "例）300"}
+                      %input{name: 'price',class: 'input-default-second', placeholder: "例）300"}
 
               .commision
                 .l-left
@@ -212,7 +252,7 @@
         = link_to '' do
           特定商取引に関する表記
   = link_to '', class: 'single-footer-logo' do
-    =image_tag('/assets/logo-gray.jpg', width: '80')
+    =image_tag('logo-gray.jpg', width: '80')
   %p
     %small
       © 2019 Mercari

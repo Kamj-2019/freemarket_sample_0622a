@@ -1,0 +1,208 @@
+// Place all the styles related to the transactions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: #f5f5f5;
+}
+.purchase {
+  > header {
+    width: 100%;
+    padding: 30px 0;
+    border: none;
+    background: none;
+    a {
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 180px;
+        height: 50px;
+      }
+    }
+  }
+  .main {
+    width: 700px;
+    height: 100%;
+    margin: 20px auto 0;
+    background: #fff;
+    &__inner {
+      width: 320px;
+      margin: 0 auto;
+      padding: 0 0 30px 0;
+    }
+  }
+  h1 {
+    font-size:22px;
+    text-align: center;
+    padding: 20px 0 40px 0;
+    margin: 0;
+  }
+  .main__inner__item {
+    display: flex;
+    padding: 0;
+    img {
+      width: 65px;
+      height:80px;
+      border: #ccc;
+    }
+    p {
+      width: 100%;
+      padding: 0 0 0 15px;
+      margin: 0;
+    }
+  }
+  .main__inner__price {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    margin: 15px 0 0 0;
+    font-weight: bold;
+    font-size: 18px;
+    span:last-child {
+      margin: 0 0 0 10px;
+      font-weight: normal;
+      font-size: 13px;
+    }
+  }
+  .main__inner__point {
+    width: 100%;
+    padding: 15px 0;
+    margin: 20px 0 0 0;
+    text-align: center;
+    background: #ccc;
+    font-size:14px;
+    letter-spacing: 1.1px;
+  }
+  .main__inner__amount {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin: 20px 0 0 0;
+    font-weight: bold;
+    font-size: 18px;
+    span:last-child {
+      font-size: 22px;
+    }
+  }
+  .main__inner__app-only {
+    margin: 20px 0 0 0;
+    font-size:14px;
+    color: #ea352d;
+    line-height: 1.5em;
+    text-align: center;
+    letter-spacing: 1.2px;
+  }
+  .main__inner__buy {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    margin: 20px 0 0 0;
+    text-align: center;
+    background: #ea352d;
+    font-size:14px;
+    letter-spacing: 1.1px;
+    color: #fff;
+    font-wight: bold;
+    text-decoration: none;
+  }
+  .main__inner__app-install {
+    margin: 10px 0 0 0;
+    font-size:14px;
+    line-height: 1.5em;
+    text-align: center;
+    letter-spacing: 1.2px;
+  }
+  .main__inner__buyer {
+    margin: 50px 0 0 0;
+    font-size:14px;
+    font-weight: bold;
+  }
+  .main__inner__buyer-address {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0 0 0;
+    list-style-type: none;
+    font-size: 14px;
+    li {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      line-height:1.5em;
+    }
+  }
+  .main__inner__buyer-payment {
+    width: 100%;
+    p {
+      margin: 10px 0 0 0;
+      font-size: 14px;
+    }
+    img {
+      width:30px;
+      height:20px;
+      margin: 10px 0 0 0;
+      border: 1px solid #ccc
+    }
+  }
+  .main__inner__change {
+    width: 100%;
+    padding: 10px 0 0 0;
+    margin: 0;
+    text-align: right;
+    a {
+      display: block;
+      font-size: 14px;
+      text-decoration: none;
+      color:#0099e8;
+    }
+    a:hover {
+      text-decoration: underline;
+      color:#60c7fc;
+    }
+    a:after {
+      position: relative;
+      width: 6px;
+      height: 6px;
+      margin-left:5px;
+      display: inline-block;
+      content: "";
+      border-top: 2px solid #0099e8;
+      border-right: 2px solid #0099e8;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    
+    }
+  }
+  > footer {
+    width: 100%;
+    height: 220px;
+    padding: 40px 0;
+    background: none;
+    ul {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 0;
+      list-style-type: none;
+      text-align: center;
+      li {
+        margin: 0 20px 0 0;  
+        font-size:12px;
+      }
+    }
+    .footer__logo {
+      display: block;
+      width: 66px;
+      height:66px;
+      margin: 40px auto 0 auto;
+      background: #ccc;
+    }
+    p {
+      margin: 15px 0 0 0;
+      text-align: center;
+      font-size:12px;
+    }
+  }
+}

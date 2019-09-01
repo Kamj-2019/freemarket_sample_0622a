@@ -18,11 +18,11 @@ Rails.application.routes.draw do
   end
   resources :signup do
     collection do
-      get 'step0' # 分岐
-      get 'step1' # 会員情報を入力
-      get 'step2' # 電話番号認証
-      get 'step3' # 住所入力
-      get 'step4' # 支払い方法
+      get 'selection' # 分岐
+      get 'personal' # 会員情報を入力
+      get 'phone' # 電話番号認証
+      get 'address' # 住所入力
+      get 'card' # 支払い方法
       get 'done' # 完了画面
     end
     member do

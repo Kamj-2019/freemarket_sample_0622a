@@ -1,7 +1,7 @@
 .single-container
   %header.regi-single-header
     %h1
-      = link_to '/' do
+      = link_to items_path do
         =image_tag "/assets/logo-gray.png", class: "regi-single-header__logo"
     %nav.progress-bar
       %ol.clearfix
@@ -30,8 +30,8 @@
           %ul
             - @user.errors.full_messages.each do |message|
               %li= message
-      = form_for @user, url: step2_signup_index_path, method: :get do |f|
-        = f.fields_for :user_detail, @user.build_user_detail, url: step2_signup_index_path, method: :get do |c|
+      = form_for @user, url: phone_signup_index_path, method: :get do |f|
+        = f.fields_for :user_detail, @user.build_user_detail, url: phone_signup_index_path, method: :get do |c|
           .form-group
             %label ニックネーム
             %span.required 必須

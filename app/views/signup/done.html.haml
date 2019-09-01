@@ -1,7 +1,7 @@
 .single-container
   %header.regi-single-header
     %h1
-      = link_to '/' do
+      = link_to items_path do
         =image_tag "/assets/logo-gray.png", class: "regi-single-header__logo"
     %nav.progress-bar
       %ol.clearfix
@@ -30,5 +30,5 @@
           %br
           会員登録が完了しました。
       .form-group
-        = link_to "メルカリをはじめる", "/", class: "btn"
+        = link_to "メルカリをはじめる", items_path, class: "btn"
 = render 'layouts/login_footer'

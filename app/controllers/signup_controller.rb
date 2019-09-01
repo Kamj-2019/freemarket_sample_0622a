@@ -1,16 +1,16 @@
 class SignupController < ApplicationController
   before_action :save_to_session, only: :step2
 
-  def step1
+  def personal
     # インスタンスの生成
     @user = User.new
     @user.build_user_detail # user_detailモデルと関連付ける
 
   end
 
-  def step2
+  def phone
 
-    # step1会員情報入力をsession保存
+    # personalでの入力をsession保存
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password] 
@@ -27,8 +27,8 @@ class SignupController < ApplicationController
 
   end
 
-  def step3
-    # step2電話番号の確認をsession保存
+  def address
+    # phoneでの入力をsession保存
     session[:phone_number] = user_detail_attributes_params[:phone_number]
 
     @user = User.new
@@ -36,8 +36,8 @@ class SignupController < ApplicationController
 
   end
 
-  def step4
-    # step3住所入力をsession保存
+  def card
+    # addressでの入力をsession保存
     session[:postalcode] = user_detail_attributes_params[:postalcode]
     session[:prefecture_id] = user_detail_attributes_params[:prefecture_id]
     session[:city] = user_detail_attributes_params[:city]

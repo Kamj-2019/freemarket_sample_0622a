@@ -1,0 +1,95 @@
+.single-container
+  %header.regi-single-header
+    %h1
+      = link_to items_path do
+        =image_tag "/assets/logo-gray.png", class: "regi-single-header__logo"
+    %nav.progress-bar
+      %ol.clearfix
+        %li.active
+          会員情報
+          .progress-status
+        %li
+          電話番号認証
+          .progress-status
+        %li
+          お届け先住所入力
+          .progress-status
+        %li
+          支払い方法
+          .progress-status
+        %li
+          完了
+          .progress-status
+  .regi-main
+    .regi-main__header
+      %h2 会員情報入力
+    .regi-main__form
+      - if @user.errors.any?
+        .regi-main__form__errors
+          %h2= "#{@user.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @user.errors.full_messages.each do |message|
+              %li= message
+      = form_for @user, url: phone_signup_index_path, method: :get do |f|
+        = f.fields_for :user_detail, @user.build_user_detail, url: phone_signup_index_path, method: :get do |c|
+          .form-group
+            %label ニックネーム
+            %span.required 必須
+            %br
+            = f.text_field :nickname, class: "input-default", placeholder: '例) メルカリ太郎', required: "true"
+          .form-group
+            %label メールアドレス
+            %span.required 必須
+            %br
+            = f.email_field :email, class: "input-default", placeholder: 'PC・携帯どちらでも可', required: "true"
+          .form-group
+            %label パスワード
+            %span.required 必須
+            %br
+            = f.password_field :password, class: "input-default", placeholder: '8文字以上', required: "true"
+          .form-group
+            %label パスワード（確認）
+            %span.required 必須
+            %br
+            = f.password_field :password_confirmation, class: "input-default", placeholder: '8文字以上', required: "true"
+          .form-group
+            %h3 本人確認
+            %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .form-group
+            %label お名前（全角）
+            %span.required 必須
+            %br
+            %li
+              = c.text_field :first_name, class: "input-default input-half", placeholder: "例)山田", required: "true"
+              = c.text_field :family_name, class: "input-default input-half", placeholder: "例)彩", required: "true"
+          .form-group
+            %label お名前カナ（全角）
+            %span.required 必須
+            %br
+            %li
+              = c.text_field :kana_first_name, class: "input-default input-half", placeholder: "例)ヤマダ", required: "true"
+              = c.text_field :kana_family_name, class: "input-default input-half", placeholder: "例)アヤ", required: "true"
+
+          .form-group
+            %label 生年月日
+            %span.required 必須
+            %br
+            .birthday-select-wrap
+              = c.text_field :birthday, class: "input-default ", placeholder: "例)1990年1月1日 → 19900101と入力", required: "true"        
+          .form-info-text
+            %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          //reCAPTCHA導入予定
+          .form-group
+            %img{:src => "/assets/recaptcha.png", class:"recaptcha-image"}/
+            %p.text-center 
+              「次へ進む」のボタンを押すことにより、
+              = link_to "利用規約", "https://www.google.com/"
+              に同意したものとみなします
+          .form-group
+            = f.submit "次へ進む", class: 'btn'
+          .form-group
+            %p.text-right
+              = link_to "本人登録について＞", "https://www.google.com/"
+= render 'layouts/login_footer'
+
+

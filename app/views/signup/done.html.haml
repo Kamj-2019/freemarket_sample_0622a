@@ -1,0 +1,34 @@
+.single-container
+  %header.regi-single-header
+    %h1
+      = link_to items_path do
+        =image_tag "/assets/logo-gray.png", class: "regi-single-header__logo"
+    %nav.progress-bar
+      %ol.clearfix
+        %li
+          会員情報
+          .progress-status
+        %li
+          電話番号認証
+          .progress-status
+        %li
+          お届け先住所入力
+          .progress-status
+        %li
+          支払い方法
+          .progress-status
+        %li.active
+          完了
+          .progress-status
+  .regi-main
+    .regi-main__header
+      %h2 会員登録完了
+    .regi-main__form
+      .text-done
+        %p
+          ありがとうございます。
+          %br
+          会員登録が完了しました。
+      .form-group
+        = link_to "メルカリをはじめる", items_path, class: "btn"
+= render 'layouts/login_footer'

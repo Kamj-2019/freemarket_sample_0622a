@@ -14,7 +14,16 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update] do
     collection do
       get 'logout'
-      get 'signup'
+    end
+  end
+  resources :signup do
+    collection do
+      get 'selection' # 分岐
+      get 'personal' # 会員情報を入力
+      get 'phone' # 電話番号認証
+      get 'address' # 住所入力
+      get 'card' # 支払い方法
+      get 'done' # 完了画面
     end
     member do
       get 'profile' # プロフィール

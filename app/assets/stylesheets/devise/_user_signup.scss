@@ -1,10 +1,8 @@
-//variableで統一する予定
-$bodybasegray: #f5f5f5;
-$bodybasewhite: #fff;
+@import "modules/variable";
 
 .single-header {
   height: 128px;
-  background-color: $bodybasegray;
+  background-color: $bodyBaseGray;
   text-align: center;
   border-width: 0;
   h1 {
@@ -12,12 +10,12 @@ $bodybasewhite: #fff;
   }  
   &__logo {
     width: 185px;
-    height: 55px;
+    height: 45px;
   }
 }
 
 .signup-container {
-  background-color: $bodybasewhite;
+  background-color: $bodyBaseWhite;
   width: 700px;
   margin: 0 auto;
   text-align: center;
@@ -53,10 +51,10 @@ $bodybasewhite: #fff;
   background-color: #ea352d;
   position: relative;
   a {
-    color: $bodybasewhite;
+    color: $bodyBaseWhite;
   }
   i {
-    color: $bodybasewhite;
+    color: $bodyBaseWhite;
     font-size: 26px;
     position: absolute;
     top: 20%;
@@ -69,10 +67,10 @@ $bodybasewhite: #fff;
   margin: 16px 0 0;
   position: relative;
   a {
-    color: $bodybasewhite;
+    color: $bodyBaseWhite;
   }
   i {
-    color: $bodybasewhite;
+    color: $bodyBaseWhite;
     font-size: 26px;
     position: absolute;
     top: 20%;

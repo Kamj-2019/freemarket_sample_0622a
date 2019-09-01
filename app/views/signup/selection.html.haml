@@ -1,7 +1,7 @@
 .single-container
   %header.single-header
     %h1
-      = link_to '/' do
+      = link_to items_path do
         =image_tag "logo-gray.png", class: "single-header__logo"
   .single-main
     %section.signup-container
@@ -10,7 +10,7 @@
         .signup-content
           //メールアドレスでの登録
           %button.btn-default.btn-mail
-            = link_to "メールアドレスで登録する", new_user_registration_path
+            = link_to "メールアドレスで登録する", personal_signup_index_path
             %i.fa.fa-envelope
           //facebookでの登録
           %button.btn-default.btn-sns-facebook

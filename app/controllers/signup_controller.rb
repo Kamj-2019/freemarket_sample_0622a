@@ -1,6 +1,8 @@
 class SignupController < ApplicationController
   before_action :save_to_session, only: :step2
 
+  require "payjp"
+
   def personal
     # インスタンスの生成
     @user = User.new
@@ -36,16 +38,22 @@ class SignupController < ApplicationController
 
   end
 
-  def card
-    # addressでの入力をsession保存
-    session[:postalcode] = user_detail_attributes_params[:postalcode]
-    session[:prefecture_id] = user_detail_attributes_params[:prefecture_id]
-    session[:city] = user_detail_attributes_params[:city]
-    session[:address] = user_detail_attributes_params[:address]
-    session[:building] = user_detail_attributes_params[:building]
-
-    @user = User.new
-    @user.build_user_detail # user_detailモデルと関連付ける
+  def pay
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    if params['payjp-token'].blank?
+      redirect_to action: "new"
+    else
+      customer = Payjp::Customer.create(
+      description: '登録テスト',
+      card: params['payjp-token'],
+      ) 
+      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      if @card.save
+        redirect_to done_signup_index_path
+      else
+        redirect_to pay_signup_index_path
+      end
+    end
 
   end
 
@@ -85,19 +93,17 @@ class SignupController < ApplicationController
        kana_first_name: session[:kana_first_name],
        kana_family_name: session[:kana_family_name],
        birthday: session[:birthday],
-       postalcode: session[:postalcode],
-       prefecture_id: session[:prefecture_id],
-       city: session[:city],
-       address: session[:address],
-       building: session[:building],
-       phone_number: session[:phone_number])
+       postalcode: user_detail_attributes_params[:postalcode],
+      prefecture_id: user_detail_attributes_params[:prefecture_id],
+      city: user_detail_attributes_params[:city],
+      address: user_detail_attributes_params[:address],
+      building: user_detail_attributes_params[:building],
+      phone_number: user_detail_attributes_params[:phone_number])
 
     if User.create
-      redirect_to done_signup_index_path
-    else
-      redirect_to step0_signup_index_path
+      sign_in User.find_by(email: session[:email]) unless user_signed_in?
+      redirect_to card_signup_index_path
     end
-
   end
 
   private
@@ -127,4 +133,5 @@ class SignupController < ApplicationController
         :phone_number
         )
     end
+
 end

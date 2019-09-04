@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
   has_one :user_detail
   accepts_nested_attributes_for :user_detail
+
+  has_one :card
 end

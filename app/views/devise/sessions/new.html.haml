@@ -29,7 +29,9 @@
 
           //reCAPTCHA導入予定
           .form-box
-            =image_tag('recaptcha.png', class:"recaptcha-image")
+            = recaptcha_tags
+
+            -# =image_tag('recaptcha.png', class:"recaptcha-image")
           .actions
             = f.submit "ログイン", class: 'btn'
 

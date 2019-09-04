@@ -24,8 +24,8 @@
     .regi-main__header
       %h2 住所入力
     .regi-main__form
-      = form_for @user, url: card_signup_index_path, method: :get do |f|
-        = f.fields_for :user_detail, @user.build_user_detail, url: card_signup_index_path, method: :get do |c|
+      = form_for @user, url: signup_index_path, method: :post do |f|
+        = f.fields_for :user_detail, @user.build_user_detail, url: signup_index_path, method: :post do |c|
           .form-group
             %label 郵便番号
             %span.required 必須

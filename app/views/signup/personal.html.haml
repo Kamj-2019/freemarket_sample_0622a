@@ -78,10 +78,8 @@
               = c.text_field :birthday, class: "input-default ", placeholder: "例)1990年1月1日 → 19900101と入力", required: "true"        
           .form-info-text
             %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-          //reCAPTCHA導入予定
           .form-group
             = recaptcha_tags
-            -# %img{:src => "/assets/recaptcha.png", class:"recaptcha-image"}/
             %p.text-center 
               「次へ進む」のボタンを押すことにより、
               = link_to "利用規約", "https://www.google.com/"

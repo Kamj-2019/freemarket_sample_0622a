@@ -26,12 +26,8 @@
             = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'login-input-text'
           .form-box
             = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: 'login-input-text'
-
-          //reCAPTCHA導入予定
           .form-box
             = recaptcha_tags
-
-            -# =image_tag('recaptcha.png', class:"recaptcha-image")
           .actions
             = f.submit "ログイン", class: 'btn'
 

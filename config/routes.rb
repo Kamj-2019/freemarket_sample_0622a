@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     end
     member do
       get 'profile' # プロフィール
-      get 'card' # 支払い方法
     end
   end
   resources :signup do
@@ -31,9 +30,8 @@ Rails.application.routes.draw do
       post 'pay', to: 'signup#pay'
     end
   end
-  resources :cards, only: [:new, :show] do
+  resources :cards, only: [:index, :new, :show] do
     collection do
-      post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
     end

@@ -5,22 +5,22 @@
   .single-main
     .sell-container
       .sell-container__inner
-        = form_for (@item) do |f|
-          .sell-container__inner__head
-            %h2
-              商品の情報を入力
-          .sell-upload-box
-            = f.label :image, "出品画像", {class: 'form-label'}
-            %span.form-require
-              必須
-            %p
-              最大10枚までアップロードできます。
-            .sell-dropbox-container
-              %label.image-uploader
-                = f.file_field :image
-                .sell-upload-drop-box
-                  %p ドラッグアンドドロップ</br>またはクリックしてファイルをアップロード
-
+        = form_for(@item) do |f|
+          = f.fields_for :item_images do |c|
+            .sell-container__inner__head
+              %h2
+                商品の情報を入力
+            .sell-upload-box
+              = f.label :image, "出品画像", {class: 'form-label'}
+              %span.form-require
+                必須
+              %p
+                最大10枚までアップロードできます。
+              .sell-dropbox-container
+                %label.image-uploader
+                  = c.file_field :image_url
+                  .sell-upload-drop-box
+                    %p ドラッグアンドドロップ</br>またはクリックしてファイルをアップロード
           .sell-content
             .sell-content--1
               .form-group
@@ -29,13 +29,13 @@
                   %span.form-require
                     必須
                 %div
-                  %input{name: 'item_title', class: 'item-name', placeholder: '商品名（必須40文字まで）'}
+                  %input{name: 'item[item_title]', class: 'item-name', placeholder: '商品名（必須40文字まで）'}
               .form-group
                 .form-label
                   商品の説明
                   %span.form-require
                     必須
-                %textarea{name: "description", class: "item-description", placeholder: "商品の説明（必須1000文字以内）"}
+                %textarea{name: "item[description]", class: "item-description", placeholder: "商品の説明（必須1000文字以内）"}
 
           .sell-content.clearfix
             .sell-content--2
@@ -49,7 +49,7 @@
                   %div
                     .select-wrap
                       %i.icon-arrow-button
-                      %select{name: "category_id", class: 'select-default'}
+                      %select{name: "item[category_id]", class: 'select-default'}
                         %option{:value => "0"}  ---
                         %option{:value => "1"}  レディース
                         %option{:value => "2"}  メンズ
@@ -71,7 +71,7 @@
                   %div
                     .select-wrap
                       %i.icon-arrow-button
-                      %select{name: "size", class: 'select-default'}
+                      %select{name: "item[size_id]", class: 'select-default'}
                         %option{:value => "0"}  ---
                         %option{:value => "1"}  S
                         %option{:value => "2"}  M
@@ -86,7 +86,7 @@
                   %div
                     .select-wrap
                       %i.icon-arrow-button
-                      %select{name: "brand", class: 'select-default'}
+                      %select{name: "item[brand_id]", class: 'select-default'}
                         %option{:value => "0"}  ---
                         %option{:value => "1"}  A
                         %option{:value => "2"}  B
@@ -100,7 +100,7 @@
                     必須
                   .select-wrap
                     %i.icon-arrow-button
-                    %select{name: 'status', class: 'select-default'}
+                    %select{name: 'item[status_id]', class: 'select-default'}
                       %option{:value => "0"}  ---
                       %option{:value => "1"}  新品、未使用
                       %option{:value => "2"}  未使用に近い
@@ -122,7 +122,7 @@
                     必須
                   .select-wrap
                     %i.icon-arow-button
-                    %select{name: 'delivery_fee_payer', class: 'select-default'}
+                    %select{name: 'item[delivery_fee_payer_id]', class: 'select-default'}
                       %option{:value => "0"}  ---
                       %option{:value => "1"}  送料込み（出品者負担）
                       %option{:value => "2"}  着払い（購入者負担）
@@ -132,7 +132,7 @@
                     必須
                   .select-wrap
                     %i.icon-arow-button
-                    %select{name: 'prefecture', class: 'select-default'}
+                    %select{name: 'item[prefecture_id]', class: 'select-default'}
                       %option{:value => "0"}  ---
                       %option{:value => "1"}  北海道
                       %option{:value => "2"}  青森県
@@ -187,7 +187,7 @@
                     必須
                   .select-wrap
                     %i.icon-arow-button
-                    %select{name: 'shipping_day', class: 'select-default'}
+                    %select{name: 'item[shipping_day_id]', class: 'select-default'}
                       %option{:value => "0"}  --
                       %option{:value => "1"}  1~2日で発送
                       %option{:value => "2"}  2~3日で発送
@@ -198,7 +198,7 @@
                     必須
                   .select-wrap
                     %i.icon-arow-button
-                    %select{name: 'delivery_method', class: 'select-default'}
+                    %select{name: 'item[delivery_method_id]', class: 'select-default'}
                       %option{:value => "0"}  --
                       %option{:value => "1"}  ゆうパック
                       %option{:value => "2"}  らくらくメルカリ便
@@ -218,7 +218,7 @@
                       %span.form-require
                         必須
                     .l-right.sell-price-input
-                      %input{name: 'price',class: 'input-default-second', placeholder: "例）300"}
+                      %input{name: 'item[price]',class: 'input-default-second', placeholder: "例）300"}
 
               .commision
                 .l-left

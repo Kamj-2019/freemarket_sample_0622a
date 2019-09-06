@@ -33,4 +33,6 @@ class Item < ApplicationRecord
   belongs_to :delivery_method
   belongs_to :prefecture
   belongs_to :shipping_day
+
+  accepts_nested_attributes_for :item_images
 end

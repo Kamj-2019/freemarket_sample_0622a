@@ -12,6 +12,18 @@
   h2 {
     text-align: center;
   }
+  &-cardsnew__header {
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    margin-top: -19px;
+    background-color: $bodyBaseWhite;
+    border-bottom: 1px solid $bodyBaseGray;
+    text-align: center;
+    h2 {
+      
+    }
+  }
   &__form {
     background-color: $bodyBaseWhite;
     padding: 40px 40px 64px;
@@ -19,6 +31,10 @@
       max-width: 343px;
       margin: 0 auto;
       padding-top: 32px;
+      &-cardsnewimage img {
+        display: inline-block;
+        margin: 8px 8px 0 0;
+      }
     }
     label {
       font-weight: 600;

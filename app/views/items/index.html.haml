@@ -58,7 +58,7 @@
         = link_to 'すべての商品を見る', ''
 
       %h2
-        = link_to "#{@category4.first_category}新着アイテム", category_item_path(6)
+        = link_to "#{@category4.first_category}新着アイテム", category_item_path(7)
       .contents__items
         - @items4.first(4).each do |item|
           = link_to item_path(item.id), class: 'contents__items-frame' do

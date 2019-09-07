@@ -2,9 +2,6 @@
 .main__visual
 .main__single-column
   .content
-    / コンテンツ
-    = link_to "新規登録", selection_signup_index_path
-    = link_to "ログイン", new_user_session_path
     %section
       %h1 ピックアップカテゴリー
       %h2
@@ -81,11 +78,11 @@
     %section
       %h1.pickupbrand ピックアップブランド
       %h2
-        = link_to href: '', alt: 'シャネル' do
+        = link_to brand_item_path(49), alt: 'シャネル' do
           = "#{@brand1.brand} 新着アイテム"
       .contents__items
-        -@items.where(brand_id: 49).first(4).each do |item|
-          = link_to 'item_path', class: 'contents__items-frame' do
+        -@items.where(brand_id: 49).order('id DESC').first(4).each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
             - item.item_images.first(1).each do |image|
               = image_tag(image.image_url, alt: '商品画像')
               %div
@@ -101,11 +98,11 @@
         = link_to 'すべての商品をみる'
 
       %h2
-        = link_to href: '', alt: 'シャネル' do
+        = link_to brand_item_path(50), alt: 'ルイヴィトン' do
           = "#{@brand2.brand} 新着アイテム"
       .contents__items
-        -@items.where(brand_id: 50).first(4).each do |item|
-          = link_to 'item_path', class: 'contents__items-frame' do
+        -@items.where(brand_id: 50).order('id DESC').first(4).each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
             - item.item_images.first(1).each do |image|
               = image_tag(image.image_url, alt: '商品画像')
               %div
@@ -121,11 +118,11 @@
         = link_to 'すべての商品をみる'
 
       %h2
-        = link_to href: '', alt: 'シャネル' do
+        = link_to brand_item_path(52), alt: 'シュプリーム' do
           = "#{@brand3.brand} 新着アイテム"
       .contents__items
-        -@items.where(brand_id: 52).first(4).each do |item|
-          = link_to 'item_path', class: 'contents__items-frame' do
+        -@items.where(brand_id: 52).order('id DESC').first(4).each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
             - item.item_images.first(1).each do |image|
               = image_tag(image.image_url, alt: '商品画像')
               %div
@@ -141,11 +138,11 @@
         = link_to 'すべての商品をみる'
         
       %h2
-        = link_to href: '', alt: 'シャネル' do
+        = link_to brand_item_path(51), alt: 'ナイキ' do
           = "#{@brand4.brand} 新着アイテム"
       .contents__items
-        -@items.where(brand_id: 51).first(4).each do |item|
-          = link_to 'item_path', class: 'contents__items-frame' do
+        -@items.where(brand_id: 51).order('id DESC').first(4).each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
             - item.item_images.first(1).each do |image|
               = image_tag(image.image_url, alt: '商品画像')
               %div

@@ -31,11 +31,11 @@
         配送先
       %ul.main__inner__buyer-address
         %li
-          = "〒#{@user.user_detail.postalcode}"
+          = "〒#{current_user.user_detail.postalcode}"
         %li
-          = "#{@user.user_detail.prefecture.prefecture}#{@user.user_detail.city}#{@user.user_detail.address}"
+          = "#{current_user.user_detail.prefecture.prefecture}#{current_user.user_detail.city}#{current_user.user_detail.address}"
         %li
-          ="#{@user.user_detail.first_name}#{@user.user_detail.family_name}"
+          ="#{current_user.user_detail.first_name}#{current_user.user_detail.family_name}"
       %p.main__inner__change
         = link_to '変更する', ""
       %p.main__inner__buyer

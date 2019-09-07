@@ -4,7 +4,6 @@ class TransactionsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @user = current_user
     card = Card.where(user_id: current_user.id).first
     #Cardテーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -21,7 +20,6 @@ class TransactionsController < ApplicationController
 
     def pay
       @item = Item.find(params[:id])
-      @user = current_user
       card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       Payjp::Charge.create(

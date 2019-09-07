@@ -9,10 +9,10 @@ class ItemsController < ApplicationController
     @category4 = FirstCategory.find(7)
     
     # アイテムの制限
-    @items1 = @items.where(category_id:1..122)
-    @items2 = @items.where(category_id:123..228)
-    @items3 = @items.where(category_id:229..341)
-    @items4 = @items.where(category_id:604..689)
+    @items1 = @items.where(category_id:1..122).order('id DESC')
+    @items2 = @items.where(category_id:123..228).order('id DESC')
+    @items3 = @items.where(category_id:229..341).order('id DESC')
+    @items4 = @items.where(category_id:604..689).order('id DESC')
 
     #ブランド
     @brand1 = Brand.find(49)
@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def brand # ブランド一覧表示
-    @brand_items = Item.all.where(brand_id: params[:id])
+    @brand_items = Item.all.where(brand_id: params[:id]).order('id DESC')
   end
 
   def new # 商品出品

@@ -8,8 +8,9 @@
     %section.content-mypage__top
       = link_to ""
       %figure
-        =image_tag("member_photo_noimage.png",height: "60",width:"60")
-      %h2 Nickname
+        = image_tag("member_photo_noimage.png",height: "60",width:"60")
+      %h2 
+        = @user.nickname
       .content-mypage__top--number
         .content-mypage__top--evaluation
           評価

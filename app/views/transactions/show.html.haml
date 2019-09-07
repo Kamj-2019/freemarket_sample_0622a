@@ -23,30 +23,37 @@
           = number_to_currency(@item.price, unit: "￥", precision: 0)
       %p.main__inner__app-only
         この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-      = link_to '購入する', "", class: 'main__inner__buy'
+      = form_tag(action: :pay, method: :post,) do
+        %button.main__inner__buy 購入する
       %p.main__inner__app-install
         アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
       %p.main__inner__buyer
         配送先
       %ul.main__inner__buyer-address
         %li
-          〒103-0001
+          = "〒#{@user.user_detail.postalcode}"
         %li
-          東京都中央区日本橋蛎殻町
+          = "#{@user.user_detail.prefecture.prefecture}#{@user.user_detail.city}#{@user.user_detail.address}"
         %li
-          加賀恭一郎
+          ="#{@user.user_detail.first_name}#{@user.user_detail.family_name}"
       %p.main__inner__change
         = link_to '変更する', ""
       %p.main__inner__buyer
         支払い方法
       .main__inner__buyer-payment
         %p
-          ************9876
-        %p
-          01/20
+        - if @default_card_information.blank?
+          %br /
+        - else
+          -#以下カード情報を表示
+          = "**** **** **** " + @default_card_information.last4
+        %p  
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
         = image_tag('', width: '26', height: '22', alt: 'クレジットカード')
         %p.main__inner__change
-          = link_to '変更する', ""
+          = link_to '変更する', new_transaction_path
   %footer
     %ul
       %li

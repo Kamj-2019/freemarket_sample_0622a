@@ -1,0 +1,59 @@
+= render 'layouts/header'
+= render 'layouts/pankuzu'
+.category__single-column
+  .content
+    %section
+      %h1
+        - if @first_items.present?
+          = "#{@first_items[0].category.first_category[:first_category]}の商品一覧"
+        - elsif @second_items.present?
+          = "#{@second_items[0].category.second_category[:second_category]}の商品一覧"
+        - elsif @third_items.present?
+          = "#{@third_items[0].category.third_category[:third_category]}の商品一覧"
+        - else
+          該当の商品がありません
+      .contents__items
+        - if @first_items.present?
+          - @first_items.each do |item|
+            = link_to item_path(item.id), class: 'contents__items-frame' do
+              = image_tag(item.item_images[0].image_url, width: '135', alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price 
+                  ¥
+                  = item.price
+                %span.likes
+                  100
+        - elsif @second_items.present?
+          - @second_items.each do |item|
+            = link_to item_path(item.id), class: 'contents__items-frame' do
+              = image_tag(item.item_images[0].image_url, width: '135', alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price 
+                  ¥
+                  = item.price
+                %span.likes
+                  100
+        - elsif @third_items.present?
+          - @third_items.each do |item|
+            = link_to item_path(item.id), class: 'contents__items-frame' do
+              = image_tag(item.item_images[0].image_url, width: '135', alt: '商品画像')
+              %div
+                %div
+                  = item.item_title
+                %span.price 
+                  ¥
+                  = item.price
+                %span.likes
+                  100
+        - else
+
+.main__foot-visual 
+.sellbutton
+  = link_to new_item_path do
+    %p 出品
+    =fa_icon "camera"
+= render 'layouts/footer'

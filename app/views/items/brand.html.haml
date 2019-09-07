@@ -1,0 +1,30 @@
+= render 'layouts/header'
+= render 'layouts/pankuzu'
+
+.brand__single-column
+  .content
+    %section
+      %h1
+        - if @brand_items.present?
+          = "#{@brand_items[0].brand[:brand]}の商品一覧"
+        - else
+          該当の商品がありません
+      .contents__items
+        - @brand_items.each do |item|
+          = link_to item_path(item.id), class: 'contents__items-frame' do
+            = image_tag(item.item_images[0].image_url, width: '135', alt: '商品画像')
+            %div
+              %div
+                = item.item_title
+              %span.price 
+                ¥
+                = item.price
+              %span.likes
+                100
+
+.main__foot-visual 
+.sellbutton
+  = link_to new_item_path do
+    %p 出品
+    =fa_icon "camera"
+= render 'layouts/footer'

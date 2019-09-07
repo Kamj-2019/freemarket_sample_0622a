@@ -8,7 +8,7 @@
     .contents--card__inner
       .contents--card__lists
         %p.contents--card__lists-title クレジットカード一覧
-        - unless @card.blank?
+        - if @card.present?
           .contents--card__details
             .contents--card__details-left
               = image_tag "credit-cards/#{@card_src}", width: '30', height: '24', alt: @card_brand, id: "card_image"

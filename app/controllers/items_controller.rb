@@ -22,11 +22,29 @@ class ItemsController < ApplicationController
   end
 
   def category # カテゴリー一覧表示
-    @items = Item.all
+    items = Item.all
+    @first_items = []
+    @second_items = []
+    @third_items = []
+    items.each do |item|
+      if (params[:id].to_i) < 13
+        if item.category.first_category_id == (params[:id].to_i)
+          @first_items << item
+        end
+      elsif (params[:id].to_i) < 145
+        if item.category.second_category_id == (params[:id].to_i)
+          @second_items << item
+        end
+      else
+        if item.category.third_category_id == (params[:id].to_i)
+          @third_items << item
+        end
+      end
+    end
   end
 
   def brand # ブランド一覧表示
-    @items = Item.all.where(brand_id: params[:id])
+    @brand_items = Item.all.where(brand_id: params[:id])
   end
 
   def new # 商品出品

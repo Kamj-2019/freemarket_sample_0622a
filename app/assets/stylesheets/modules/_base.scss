@@ -14,31 +14,31 @@ body {
     height: 50px;
     line-height:50px;
     margin: 0 auto;
-      p {
-        margin: 0;
-        font-weight: bold;
-        font-size:0.9em;
-        letter-spacing: 1.0px;
-        a {
-          font-weight: normal;
-          text-decoration: none;
-        }
-        a:hover {
-          text-decoration: underline;
-        }
-        a:after {
-          position: relative;
-          width: 8px;
-          height: 8px;
-          margin-left:10px;
-          display: inline-block;
-          content: "";
-          border-top: 2px solid #919191;
-          border-right: 2px solid #919191;
-          -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-        }
+    p {
+      margin: 0;
+      font-weight: bold;
+      font-size:0.9em;
+      letter-spacing: 1.0px;
+      a {
+        font-weight: normal;
+        text-decoration: none;
       }
+      a:hover {
+        text-decoration: underline;
+      }
+      a:after {
+        position: relative;
+        width: 8px;
+        height: 8px;
+        margin: 0 10px;
+        display: inline-block;
+        content: "";
+        border-top: 2px solid #919191;
+        border-right: 2px solid #919191;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
   }
 }
 

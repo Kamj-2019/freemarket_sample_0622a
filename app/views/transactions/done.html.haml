@@ -1,0 +1,68 @@
+.purchase
+  %header
+    = link_to image_tag("logo.svg", alt: 'ロゴマーク'), root_path
+  .main
+    .notification
+      .notification__shipping
+        = fa_icon "clock-o"
+        発送をお待ちください
+      .notification__comment
+        出品者からの発送通知をお待ちください
+    .main__inner
+      %h1
+        購入が完了しました
+      %p.main__inner__item2
+        = image_tag(@item.item_images[0].image_url, alt: '商品画像')
+      %p.main__inner__title
+        = @item.item_title
+      .main__inner__price2
+        %span
+          = number_to_currency(@item.price, unit: "￥", precision: 0)
+        %span
+          = "#{@item.delivery_fee_payer.delivery_fee_payer}".sub(/\(.*/, '')
+      %p.main__inner__buyer
+        配送先
+      %ul.main__inner__buyer-address
+        %li
+          = "〒#{current_user.user_detail.postalcode}"
+        %li
+          = "#{current_user.user_detail.prefecture.prefecture}#{current_user.user_detail.city}#{current_user.user_detail.address}"
+        %li
+          ="#{current_user.user_detail.first_name}#{current_user.user_detail.family_name}"
+      %p.main__inner__buyer
+        支払い方法
+      .main__inner__buyer-payment
+        %p
+          = "**** **** **** " + @default_card_information.last4
+        %p
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+        = image_tag('', width: '26', height: '22', alt: 'クレジットカード') 
+      .lower
+        .flow
+          発送通知後の流れ
+        %p.icons
+          = fa_icon "smile-o"
+          = fa_icon "meh-o"
+          = fa_icon "frown-o"
+        %p.comments
+          %br 商品を受け取ったら
+          %br 出品者評価をしましょう。
+          %br 購入代金が出品者に振り込まれます。
+          %br 評価後に取引は完了です。
+        %p.linkto_mypage
+          = link_to "マイページへもどる", user_path
+        
+  %footer
+    %ul
+      %li
+        プライバシーポリシー
+      %li
+        利用規約
+      %li
+        特定商取引に関する表記
+    = link_to image_tag("logo-gray.jpg", alt: 'ロゴマーク'), root_path ,class: 'footer__logo'
+    %p
+      © 2019 freemarket
+

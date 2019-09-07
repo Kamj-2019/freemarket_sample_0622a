@@ -78,7 +78,7 @@
       .item-buy-btn
         - if @item.aasm_state == nil || @item.aasm_state == 'waiting'
           .item-buy-btn__red
-            = link_to '購入画面に進む', edit_transaction_path(@item.id)
+            = link_to '購入画面に進む', transaction_path(params[:id])
         -else
           .item-buy-btn__gray
             売り切れました

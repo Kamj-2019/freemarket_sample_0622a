@@ -10,7 +10,13 @@ Rails.application.routes.draw do
       get 'brand' # ブランド一覧表示
     end
   end
-  resources :transactions, only: [:edit, :update]
+
+  resources :transactions, only: [:index, :update, :show, :new] do
+    member do
+      post 'pay' #購入
+      get 'done' #購入後
+    end
+  end
   resources :users, only: [:index, :show, :edit, :update] do
     collection do
       get 'logout'

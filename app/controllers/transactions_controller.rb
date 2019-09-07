@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController 
-
+  before_action :set_item
   require 'payjp'
 
   def show
@@ -40,6 +40,11 @@ class TransactionsController < ApplicationController
     @default_card_information = customer.cards.retrieve(card.card_id)
   end
 
+  private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
 
 

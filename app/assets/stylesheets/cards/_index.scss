@@ -36,7 +36,7 @@
     &-left {
       font-size: 14px;
     }
-    &-right a {
+    &-right button {
       display: block;
       padding: 3px 5px;
       font-size:14px;
@@ -53,6 +53,7 @@
     line-height: 50px;
     a {
       display: block;
+      margin: 25px 0 0 0;
       color: #fff;
       background: #ea352d;
     }

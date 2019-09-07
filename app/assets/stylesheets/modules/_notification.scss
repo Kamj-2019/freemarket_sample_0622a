@@ -1,0 +1,15 @@
+.notification{
+  text-align: center;
+  background-color: #fbf0d1;
+  padding:30px 0;
+  &__shipping{
+    color: red;
+    font-weight: bold;
+    font-size:20px;
+    line-height: 50px;
+    i{
+    font-size: 40px;
+    padding-right:10px;
+    }
+  }
+}

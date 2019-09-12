@@ -14,6 +14,7 @@ class TransactionsController < ApplicationController
     customer = Payjp::Customer.retrieve(@card.customer_id)
     #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
     @default_card_information = customer.cards.retrieve(@card.card_id)
+    @item.run
   end
 end
 
@@ -31,6 +32,7 @@ end
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @default_card_information = customer.cards.retrieve(@card.card_id)
+    @item.finish
   end
 
   private

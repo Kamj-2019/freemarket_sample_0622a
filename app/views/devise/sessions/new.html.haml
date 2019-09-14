@@ -1,5 +1,5 @@
 .login-page
-  = link_to class: 'login-page__top' do
+  = link_to root_path, class: 'login-page__top' do
     =image_tag("logo-gray.png", class: "login-page__logo")
 
   .login-page__main
@@ -12,10 +12,10 @@
 
       //facebookかGoogleでログイン
       .login-form
-        = link_to '', class: "btn-facebook" do
+        = link_to user_facebook_omniauth_authorize_path, class: "btn-facebook" do
           %i.fa.fa-facebook-square
           .option-text Facebookでログイン
-        = link_to '', class: "btn-google" do
+        = link_to user_google_oauth2_omniauth_authorize_path, class: "btn-google" do
           %i.fa.fa-google
           .option-text Googleでログイン
 

@@ -8,6 +8,8 @@
         .item-content
           .item-content__main-photo
             = image_tag(@item.item_images[0].image_url, width: '135', alt: '商品画像')
+            - if @item.aasm_state == 'done'
+              .item-content__main-photo-sold
           - @item.item_images.each_with_index do |image, i|
             - if i > 0 and i < 4
               .item-content__sub-photo
@@ -74,24 +76,17 @@
           （税込）
         %span.item-detail-price__shipping-fee
           = "#{@item.delivery_fee_payer.delivery_fee_payer}".sub(/\(.*/, '')
-      -# .item-buy-btn
-      -#   - if @item.aasm_state == nil || @item.aasm_state == 'waiting'
-      -#     .item-buy-btn__red
-      -#       = link_to '購入画面に進む', transaction_path(params[:id])
-      -#   -else
-      -#     .item-buy-btn__gray
-      -#       売り切れました
       .item-btn
         - if @item.user_id == current_user.id
           .item-btn__destroy__gray
             = link_to 'この商品を削除する', "/items/#{@item.id}", method: :delete
         - else
-          - if @item.aasm_state == nil || @item.aasm_state == 'waiting'
-            .item-btn__buy__red
-              = link_to '購入画面に進む', transaction_path(params[:id])
-          -else
+          - if @item.aasm_state == 'done'
             .item-btn__buy__gray
               売り切れました
+          -else
+            .item-btn__buy__red
+              = link_to '購入画面に進む', transaction_path(params[:id])
       .item-description
         %p
           = @item.description
@@ -180,8 +175,10 @@
         - if 0 <= i and i <= 2
           = link_to item_path(item.id), class: 'contents__items-frame' do
             = image_tag(item.item_images[0].image_url, alt: '商品画像')
-            %div
-              %div
+            - if item.aasm_state == 'done'
+              %p.contents__items-frame-sold
+            .contents__items__detail
+              %p.title
                 = item.item_title
               %span.price
                 = number_to_currency(item.price, unit: "￥", precision: 0)
@@ -193,8 +190,10 @@
         - if 3 <= i and i <= 5
           = link_to item_path(item.id), class: 'contents__items-frame' do
             = image_tag(item.item_images[0].image_url, alt: '商品画像')
-            %div
-              %div
+            - if item.aasm_state == 'done'
+              %p.contents__items-frame-sold
+            .contents__items__detail
+              %p.title
                 = item.item_title
               %span.price
                 = number_to_currency(item.price, unit: "￥", precision: 0)
@@ -217,27 +216,31 @@
           - if 0 <= i and i <= 2
             = link_to item_path(item.id), class: 'contents__items-frame' do
               = image_tag(item.item_images[0].image_url, alt: '商品画像')
-              %div
-                %div
+              - if item.aasm_state == 'done'
+                %p.contents__items-frame-sold
+              .contents__items__detail
+                %p.title
                   = item.item_title
                 %span.price
                   = number_to_currency(item.price, unit: "￥", precision: 0)
                 %span.likes
                   =fa_icon "heart-o"
-                  100
+                  12
       - else
         - @allitems.where(brand_id: @item.brand_id).where(category_id: @item.category_id).each_with_index do |item, i|
           - if 1 <= i and i <= 3
             = link_to item_path(item.id), class: 'contents__items-frame' do
               = image_tag(item.item_images[0].image_url, alt: '商品画像')
-              %div
-                %div
+              - if item.aasm_state == 'done'
+                %p.contents__items-frame-sold
+              .contents__items__detail
+                %p.title
                   = item.item_title
                 %span.price
                   = number_to_currency(item.price, unit: "￥", precision: 0)
                 %span.likes
                   =fa_icon "heart-o"
-                  100
+                  12
 .main-visual
 
 = render "layouts/footer"

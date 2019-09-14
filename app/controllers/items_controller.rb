@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
 
   def create # 商品出品完了
     @item = Item.new(item_params)
-    @item.user_id = current_user.id    
+    @item.user_id = current_user.id
     if @item.save
       redirect_to root_path
     end

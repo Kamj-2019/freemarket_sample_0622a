@@ -27,7 +27,7 @@ class Item < ApplicationRecord
     end
   end
   extend ActiveHash::Associations::ActiveRecordExtensions
-  has_many :item_images
+  has_many :item_images, dependent: :destroy
   belongs_to :user
   has_many :users, through: :users_items
   has_many :users, through: :likes

@@ -1,7 +1,7 @@
 .single-container
   %header.single-header
     %h1
-      = link_to items_path do
+      = link_to root_path do
         =image_tag "logo-gray.png", class: "single-header__logo"
   .single-main
     %section.signup-container
@@ -14,11 +14,11 @@
             %i.fa.fa-envelope
           //facebookでの登録
           %button.btn-default.btn-sns-facebook
-            = link_to "facebookで登録する", ""
+            = link_to "facebookで登録する", user_facebook_omniauth_authorize_path 
             %i.fa.fa-facebook-square
           //Googleでの登録
           %button.btn-default.btn-sns-google
-            = link_to "Googleで登録する", ""
+            = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path
             %i.fa.fa-google
 = render 'layouts/login_footer'
 

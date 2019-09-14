@@ -13,8 +13,10 @@
         - @brand_items.each do |item|
           = link_to item_path(item.id), class: 'contents__items-frame' do
             = image_tag(item.item_images[0].image_url, width: '135', alt: '商品画像')
-            %div
-              %div
+            - if item.aasm_state == 'done'
+              %p.contents__items-frame-sold
+            .contents__items__detail
+              %p.title
                 = item.item_title
               %span.price 
                 ¥

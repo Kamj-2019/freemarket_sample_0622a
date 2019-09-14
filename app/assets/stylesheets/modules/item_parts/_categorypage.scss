@@ -56,30 +56,55 @@
             height: 200px;
             margin-bottom:25px;
           }
-          div {
-            width:174px;
-            margin:0 auto;
-            text-decoration: none;
-            div {
-              display: inline-block;
-              margin-bottom:15px;
-              line-height:1.6em;
-            }
-            .price {
-              float:left;
-              font-weight: bold;
-            }
-            .likes {
-              float:right;
-              i {
-                font-size:1.3em;
-                color: #ccc;
-              }
-            }
+          &-sold {
+            width: 190px;
+            position: relative;
+            top: -225px;
+          }
+          &-sold::before {
+            content: "";
+            top: 0;
+            left: 0;
+            border-bottom: 100px solid transparent;
+            border-left: 100px solid #c12748; /* ラベルの色はここで変更 */
+            position: absolute;
+            z-index: 100;
+          }
+          &-sold::after {
+            content: "SOLD";
+            display: block;
+            top: 20px;
+            transform: rotate(-45deg);
+            color: #fff; /* 文字色はここで変更 */
+            font-weight:bold;
+            font-size: 24px;
+            left: 0;
+            position: absolute;
+            z-index: 101;
           }
         }
         &-frame:last-child {
           margin-right: 0;
+        }
+        &__detail {
+          width:174px;
+          margin:0 auto;
+          text-decoration: none;
+          .title {
+            margin-bottom:15px;
+            line-height:1.6em;
+          }
+          .price {
+            float:left;
+            font-weight: bold;
+          }
+          .likes {
+            float:right;
+            i {
+              font-size:1.3em;
+              color: #ccc;
+            }
+          }
         }
       }
       .contents__all-items {

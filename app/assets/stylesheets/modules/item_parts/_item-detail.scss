@@ -58,6 +58,33 @@
   float: left;
   &__main-photo {
     overflow: hidden;
+    &-sold {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      top: -300px;
+    }
+    &-sold::before {
+      content: "";
+      top: 0;
+      left: 0;
+      border-bottom: 116px solid transparent;
+      border-left: 116px solid #c12748; /* ラベルの色はここで変更 */
+      position: absolute;
+      z-index: 100;
+    }
+    &-sold::after {
+      content: "SOLD";
+      display: block;
+      top: 25px;
+      transform: rotate(-45deg);
+      color: #fff; /* 文字色はここで変更 */
+      font-weight:bold;
+      font-size: 28px;
+      left: 0;
+      position: absolute;
+      z-index: 101;
+    }
     img {
       min-width: 300px;
       max-width: 300px;
@@ -559,25 +586,52 @@
       height: 214px;
       margin-bottom:25px;
     }
-    div {
-      width:174px;
-      margin:0 auto;
-      text-decoration: none;
-      div {
-        display: inline-block;
-        margin-bottom:15px;
-        line-height:1.6em;
-      }
-      .price {
-        float:left;
-        font-weight: bold;
-      }
-      .likes {
-        float:right;
-        i {
-          font-size:1.3em;
-          color: #ccc;
-        }
+    &-sold {
+      width: 214px;
+      // height: 214px;
+      position: relative;
+      top: -239px;
+    }
+    &-sold::before {
+      content: "";
+      top: 0;
+      left: 0;
+      border-bottom: 100px solid transparent;
+      border-left: 100px solid #c12748; /* ラベルの色はここで変更 */
+      position: absolute;
+      z-index: 100;
+    }
+    &-sold::after {
+      content: "SOLD";
+      display: block;
+      top: 20px;
+      transform: rotate(-45deg);
+      color: #fff; /* 文字色はここで変更 */
+      font-weight:bold;
+      font-size: 24px;
+      left: 0;
+      position: absolute;
+      z-index: 101;
+    }
+  }
+  &__detail {
+    width:174px;
+    margin:0 auto;
+    text-decoration: none;
+    position: relative;
+    .title {
+      margin-bottom:15px;
+      line-height:1.6em;
+    }
+    .price {
+      float:left;
+      font-weight: bold;
+    }
+    .likes {
+      float:right;
+      i {
+        font-size:1.3em;
+        color: #ccc;
       }
     }
   }

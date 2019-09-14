@@ -74,13 +74,24 @@
           （税込）
         %span.item-detail-price__shipping-fee
           = "#{@item.delivery_fee_payer.delivery_fee_payer}".sub(/\(.*/, '')
-      .item-buy-btn
-        - if @item.aasm_state == nil || @item.aasm_state == 'waiting'
-          .item-buy-btn__red
-            = link_to '購入画面に進む', transaction_path(params[:id])
-        -else
-          .item-buy-btn__gray
-            売り切れました
+      -# .item-buy-btn
+      -#   - if @item.aasm_state == nil || @item.aasm_state == 'waiting'
+      -#     .item-buy-btn__red
+      -#       = link_to '購入画面に進む', transaction_path(params[:id])
+      -#   -else
+      -#     .item-buy-btn__gray
+      -#       売り切れました
+      .item-btn
+        - if @item.user_id == current_user.id
+          .item-btn__destroy__gray
+            = link_to 'この商品を削除する', "/items/#{@item.id}", method: :delete
+        - else
+          - if @item.aasm_state == nil || @item.aasm_state == 'waiting'
+            .item-btn__buy__red
+              = link_to '購入画面に進む', transaction_path(params[:id])
+          -else
+            .item-btn__buy__gray
+              売り切れました
       .item-description
         %p
           = @item.description

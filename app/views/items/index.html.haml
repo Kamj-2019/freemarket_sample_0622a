@@ -19,7 +19,7 @@
               %span.likes
                 100
       .contents__all-items
-        = link_to 'すべての商品を見る', ''
+        = link_to 'すべての商品を見る', category_item_path(1)
 
       %h2
         = link_to "#{@category2.first_category}新着アイテム", category_item_path(2)
@@ -37,7 +37,7 @@
                 =fa_icon "heart-o"
                 135
       .contents__all-items
-        = link_to 'すべての商品を見る', ''
+        = link_to 'すべての商品を見る', category_item_path(2)
 
       %h2
         = link_to "#{@category3.first_category}新着アイテム", category_item_path(3)
@@ -55,7 +55,7 @@
                 =fa_icon "heart-o"
                 135
       .contents__all-items
-        = link_to 'すべての商品を見る', ''
+        = link_to 'すべての商品を見る', category_item_path(3)
 
       %h2
         = link_to "#{@category4.first_category}新着アイテム", category_item_path(7)
@@ -73,7 +73,7 @@
                 =fa_icon "heart-o"
                 135
       .contents__all-items
-        = link_to 'すべての商品を見る', ''
+        = link_to 'すべての商品を見る', category_item_path(7)
 
     %section
       %h1.pickupbrand ピックアップブランド
@@ -95,7 +95,7 @@
                   =fa_icon "heart-o"
                   135
       .contents__all-items
-        = link_to 'すべての商品をみる'
+        = link_to 'すべての商品をみる', brand_item_path(49)
 
       %h2
         = link_to brand_item_path(50), alt: 'ルイヴィトン' do
@@ -115,7 +115,7 @@
                   =fa_icon "heart-o"
                   135
       .contents__all-items
-        = link_to 'すべての商品をみる'
+        = link_to 'すべての商品をみる', brand_item_path(50)
 
       %h2
         = link_to brand_item_path(52), alt: 'シュプリーム' do
@@ -135,7 +135,7 @@
                   =fa_icon "heart-o"
                   135
       .contents__all-items
-        = link_to 'すべての商品をみる'
+        = link_to 'すべての商品をみる', brand_item_path(52)
         
       %h2
         = link_to brand_item_path(51), alt: 'ナイキ' do
@@ -155,7 +155,7 @@
                   =fa_icon "heart-o"
                   135
       .contents__all-items
-        = link_to 'すべての商品をみる'
+        = link_to 'すべての商品をみる', brand_item_path(51)
 
 .main__foot-visual 
 .sellbutton

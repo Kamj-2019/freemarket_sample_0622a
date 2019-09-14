@@ -237,7 +237,7 @@
   }
 }
 
-.item-buy-btn {
+.item-btn {
   width: 620px;
   height: 60px;
   line-height: 60px;
@@ -246,14 +246,21 @@
   font-weight: bold;
   font-size: 26px;
   color: #fff;
-  &__gray {
+  &__buy__gray {
     background-color: gray;
   }
-  &__red {
+  &__buy__red {
     a {
       display: block;
       background: #ea352d;
       color: #fff;
+    }
+  }
+  &__destroy__gray {
+    background-color: gray;
+    a {
+      color: #fff;
+      font-size: 16px;
     }
   }
 }

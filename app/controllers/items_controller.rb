@@ -2,17 +2,17 @@ class ItemsController < ApplicationController
 
   def index # トップページ一覧表示
     # カテゴリー
-    @items = Item.all
+    @items = Item.all.order('id DESC')
     @category1 = FirstCategory.find(1)
     @category2 = FirstCategory.find(2)
     @category3 = FirstCategory.find(3)
     @category4 = FirstCategory.find(7)
     
     # アイテムの制限
-    @items1 = @items.where(category_id:1..122).order('id DESC')
-    @items2 = @items.where(category_id:123..228).order('id DESC')
-    @items3 = @items.where(category_id:229..341).order('id DESC')
-    @items4 = @items.where(category_id:604..689).order('id DESC')
+    @items1 = @items.where(category_id:1..122)
+    @items2 = @items.where(category_id:123..228)
+    @items3 = @items.where(category_id:229..341)
+    @items4 = @items.where(category_id:604..689)
 
     #ブランド
     @brand1 = Brand.find(49)

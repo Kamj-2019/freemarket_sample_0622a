@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   include AASM
 
   aasm :column => 'aasm_state' do
@@ -26,7 +28,7 @@ class Item < ApplicationRecord
       transitions :from => [:wip, :done], :to => :waiting
     end
   end
-  extend ActiveHash::Associations::ActiveRecordExtensions
+  
   has_many :item_images, dependent: :destroy
   belongs_to :user
   has_many :users, through: :users_items

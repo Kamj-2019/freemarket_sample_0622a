@@ -121,6 +121,22 @@ body {
         font-wight: bold;
         text-decoration: none;
       }
+      &__notbuy {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        margin: 20px 0 0 0;
+        text-align: center;
+        background: #ccc;
+        font-size:14px;
+        letter-spacing: 1.1px;
+        color: #000;
+        font-wight: bold;
+        text-decoration: none;
+        &-not {
+          background: #ccc;
+        }
+      }
       &__app-install {
         margin: 10px 0 0 0;
         font-size:14px;

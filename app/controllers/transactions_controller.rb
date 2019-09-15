@@ -9,16 +9,12 @@ class TransactionsController < ApplicationController
       redirect_to controller: "card", action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    #保管した顧客IDでpayjpから情報取得
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-    @default_card_information = customer.cards.retrieve(@card.card_id)
-    if @item.aasm_state == 'waiting'
-      @item.run!
+      get_payjp
+      if @item.aasm_state == 'waiting'
+        @item.run!
+      end
     end
   end
-end
 
   def pay
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
@@ -32,9 +28,7 @@ end
 
   def  done
     @item.finish!
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    @default_card_information = customer.cards.retrieve(@card.card_id)
+    get_payjp
   end
 
   private
@@ -47,6 +41,30 @@ end
   def set_card
     @card = Card.find_by(user_id: current_user.id)
   end
+
+  def get_payjp
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    #保管した顧客IDでpayjpから情報取得
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+    @default_card_information = customer.cards.retrieve(@card.card_id)
+    @card_brand = @default_card_information.brand      
+    case @card_brand
+    when "Visa"
+      @card_src = "visa.svg"
+    when "JCB"
+      @card_src = "jcb.svg"
+    when "MasterCard"
+      @card_src = "master-card.svg"
+    when "American Express"
+      @card_src = "american_express.svg"
+    when "Saison Card"
+      @card_src = "saison-card.svg"
+    when "Diners Club"
+      @card_src = "dinersclub.svg"
+    when "Discover"
+      @card_src = "discover.svg"
+    end
+  end
+
 end
-
-

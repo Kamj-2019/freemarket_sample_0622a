@@ -68,7 +68,7 @@
             border-bottom: 100px solid transparent;
             border-left: 100px solid #c12748; /* ラベルの色はここで変更 */
             position: absolute;
-            z-index: 100;
+            z-index: 2;
           }
           &-sold::after {
             content: "SOLD";
@@ -80,7 +80,7 @@
             font-size: 24px;
             left: 0;
             position: absolute;
-            z-index: 101;
+            z-index: 2;
           }
         }
         &-frame:last-child {

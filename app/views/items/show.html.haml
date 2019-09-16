@@ -86,7 +86,7 @@
               売り切れました
           -else
             .item-btn__buy__red
-              = link_to '購入画面に進む', transaction_path(params[:id])
+              = link_to '購入画面に進む', transaction_path(params[:id]), method: :get
       .item-description
         %p
           = @item.description

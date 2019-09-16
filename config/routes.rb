@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :transactions, only: [:index, :update, :show, :new] do
+  resources :transactions, only: [:show] do
     member do
       post 'pay' #購入
       get 'done' #購入後
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
       post 'pay', to: 'signup#pay'
     end
   end
-  resources :cards, only: [:index, :new, :show] do
+  resources :cards, only: [:index, :new] do
     collection do
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'

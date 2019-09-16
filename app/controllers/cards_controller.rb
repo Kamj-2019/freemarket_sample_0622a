@@ -64,7 +64,4 @@ class CardsController < ApplicationController
       redirect_to action: "index"
   end
 
-  def show
-
-  end
 end

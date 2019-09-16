@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
   def show
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "card", action: "new"
+      redirect_to controller: "cards", action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
       get_payjp
